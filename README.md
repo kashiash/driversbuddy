@@ -15,3 +15,6 @@ import danych z transakcjami shell/orlen/bp inne ..
 
 wykorzystane technologie serwis c# + ms sql (ewentualnie vapor + postgres)
 swiftUI, Swift SwiftData
+
+
+test commita
