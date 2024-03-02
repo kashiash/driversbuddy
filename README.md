@@ -17,4 +17,15 @@ wykorzystane technologie serwis c# + ms sql (ewentualnie vapor + postgres)
 swiftUI, Swift SwiftData
 
 
-test commita
+
+
+
+
+
+
+
+## Postepy w Interfejsie
+
+
+
+![image-20240302230036196](image-20240302230036196.png)
