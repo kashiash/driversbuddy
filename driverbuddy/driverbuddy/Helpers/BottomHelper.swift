@@ -18,32 +18,40 @@ extension  View {
 fileprivate struct SheetRootViewFinder: UIViewRepresentable {
 
     var height: CGFloat
+
     func makeCoordinator() -> Coordinator {
         return Coordinator()
     }
-    func makeUIView(context: Context) -> some UIView {
-        return .init()
-    }
 
+    func makeUIView(context: Context) -> UIView {
+        return UIView()
+    }
 
     func updateUIView(_ uiView: UIView, context: Context) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            guard !context.coordinator.isMasked else { return }
+
             if let rootView = uiView.viewBeforeWindow {
                 let safeArea = rootView.safeAreaInsets
-                // Updating height to add extra space in the bottom
-                rootView.frame = .init(
+                rootView.frame = CGRect(
                     origin: .zero,
-                    size: .init(
-                        width:rootView.frame.width,
-                        height: rootView.frame.height - (height + safeArea.bottom)
+                    size: CGSize(
+                        width: rootView.frame.width,
+                        height: rootView.frame.height - (self.height + safeArea.bottom)
                     )
                 )
 
-//                rootView.clipsToBounds = true
-//                for  view rootView.subviews {
-//                    //removing shadows
-//                    view.layer.shadowColor = UIColor.clear.cgColor
-//                }
+                rootView.clipsToBounds = true
+                for  view in rootView.subviews {
+                    //removing shadows
+                    view.layer.shadowColor = UIColor.clear.cgColor
+
+                    if view.layer.animationKeys() != nil {
+                        if let cornerRadiusView = view.allSubViews.first(where: {$0.layer.animationKeys()?.contains("cornerRadius") ?? false}) {
+                            cornerRadiusView.layer.maskedCorners = []
+                        }
+                    }
+                }
             }
         }
     }
@@ -55,10 +63,17 @@ fileprivate struct SheetRootViewFinder: UIViewRepresentable {
 
 fileprivate extension UIView {
     var viewBeforeWindow: UIView? {
-        if let superview, superview is UIWindow { 
+        if let superview, superview is UIWindow {
             return self
         }
         return superview?.viewBeforeWindow
+    }
+
+    // Retriving subvies from UIView
+    var allSubViews: [UIView] {
+        return subviews.flatMap {
+            [$0] + $0.subviews
+        }
     }
 }
 
