@@ -35,6 +35,7 @@ struct ContentView: View {
             .presentationCornerRadius(20)
             .presentationBackground(.regularMaterial)
             .presentationBackgroundInteraction(.enabled(upThrough: .large))
+            .bottomMaskForSheet()
         }
     }
 }
