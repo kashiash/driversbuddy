@@ -24,7 +24,6 @@ struct ContentView: View {
         }
         .task{
             showSheet = true
-
         }
         .sheet(isPresented: $showSheet) {
             VStack(alignment: .leading,spacing: 10, content: {
