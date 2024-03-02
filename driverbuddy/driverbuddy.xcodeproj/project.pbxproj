@@ -14,6 +14,7 @@
 		76294B882B934FA0006476EC /* driverbuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76294B872B934FA0006476EC /* driverbuddyTests.swift */; };
 		76294B922B934FA0006476EC /* driverbuddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76294B912B934FA0006476EC /* driverbuddyUITests.swift */; };
 		76294B942B934FA0006476EC /* driverbuddyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76294B932B934FA0006476EC /* driverbuddyUITestsLaunchTests.swift */; };
+		76294BA12B93B9AB006476EC /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76294BA02B93B9AB006476EC /* Tab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		76294B8D2B934FA0006476EC /* driverbuddyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = driverbuddyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76294B912B934FA0006476EC /* driverbuddyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = driverbuddyUITests.swift; sourceTree = "<group>"; };
 		76294B932B934FA0006476EC /* driverbuddyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = driverbuddyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		76294BA02B93B9AB006476EC /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +96,13 @@
 		76294B752B934F9E006476EC /* driverbuddy */ = {
 			isa = PBXGroup;
 			children = (
+				76294BA32B93BAE5006476EC /* Helpers */,
+				76294BA22B93BADB006476EC /* Model */,
 				76294B762B934F9E006476EC /* driverbuddyApp.swift */,
 				76294B782B934F9E006476EC /* ContentView.swift */,
 				76294B7A2B934FA0006476EC /* Assets.xcassets */,
 				76294B7C2B934FA0006476EC /* Preview Content */,
+				76294BA02B93B9AB006476EC /* Tab.swift */,
 			);
 			path = driverbuddy;
 			sourceTree = "<group>";
@@ -125,6 +130,20 @@
 				76294B932B934FA0006476EC /* driverbuddyUITestsLaunchTests.swift */,
 			);
 			path = driverbuddyUITests;
+			sourceTree = "<group>";
+		};
+		76294BA22B93BADB006476EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		76294BA32B93BAE5006476EC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76294BA12B93B9AB006476EC /* Tab.swift in Sources */,
 				76294B792B934F9E006476EC /* ContentView.swift in Sources */,
 				76294B772B934F9E006476EC /* driverbuddyApp.swift in Sources */,
 			);
