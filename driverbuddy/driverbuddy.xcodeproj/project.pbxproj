@@ -28,6 +28,8 @@
 		76896E512B94F0EB00FF101C /* CarSerie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E502B94F0EB00FF101C /* CarSerie.swift */; };
 		76896E532B94F0FA00FF101C /* CarGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E522B94F0FA00FF101C /* CarGeneration.swift */; };
 		76896E552B94F10C00FF101C /* CarTrim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E542B94F10C00FF101C /* CarTrim.swift */; };
+		76896E572B9511B800FF101C /* ImportDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E562B9511B800FF101C /* ImportDataTests.swift */; };
+		76896E5A2B9523D300FF101C /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 76896E592B9523D300FF101C /* SwiftCSV */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,7 @@
 		76896E502B94F0EB00FF101C /* CarSerie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSerie.swift; sourceTree = "<group>"; };
 		76896E522B94F0FA00FF101C /* CarGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarGeneration.swift; sourceTree = "<group>"; };
 		76896E542B94F10C00FF101C /* CarTrim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTrim.swift; sourceTree = "<group>"; };
+		76896E562B9511B800FF101C /* ImportDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportDataTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76896E5A2B9523D300FF101C /* SwiftCSV in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +106,7 @@
 		76294B6A2B934F9E006476EC = {
 			isa = PBXGroup;
 			children = (
+				76896E562B9511B800FF101C /* ImportDataTests.swift */,
 				76294B752B934F9E006476EC /* driverbuddy */,
 				76294B862B934FA0006476EC /* driverbuddyTests */,
 				76294B902B934FA0006476EC /* driverbuddyUITests */,
@@ -201,6 +206,9 @@
 			dependencies = (
 			);
 			name = driverbuddy;
+			packageProductDependencies = (
+				76896E592B9523D300FF101C /* SwiftCSV */,
+			);
 			productName = driverbuddy;
 			productReference = 76294B732B934F9E006476EC /* driverbuddy.app */;
 			productType = "com.apple.product-type.application";
@@ -273,6 +281,9 @@
 				Base,
 			);
 			mainGroup = 76294B6A2B934F9E006476EC;
+			packageReferences = (
+				76896E582B9523D300FF101C /* XCRemoteSwiftPackageReference "SwiftCSV" */,
+			);
 			productRefGroup = 76294B742B934F9E006476EC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -338,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76896E572B9511B800FF101C /* ImportDataTests.swift in Sources */,
 				76294B882B934FA0006476EC /* driverbuddyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -660,6 +672,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		76896E582B9523D300FF101C /* XCRemoteSwiftPackageReference "SwiftCSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftcsv/SwiftCSV.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		76896E592B9523D300FF101C /* SwiftCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 76896E582B9523D300FF101C /* XCRemoteSwiftPackageReference "SwiftCSV" */;
+			productName = SwiftCSV;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 76294B6B2B934F9E006476EC /* Project object */;
 }
