@@ -25,9 +25,7 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showSheet) {
             VStack(alignment: .leading,spacing: 10, content: {
-                Text(activeTab.rawValue)
-                    .font(.title2)
-                    .fontWeight(.semibold)
+                activeTab.tabContent
             })
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)

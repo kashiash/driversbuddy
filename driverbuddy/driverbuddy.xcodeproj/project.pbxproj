@@ -16,6 +16,7 @@
 		76294B942B934FA0006476EC /* driverbuddyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76294B932B934FA0006476EC /* driverbuddyUITestsLaunchTests.swift */; };
 		76294BA12B93B9AB006476EC /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76294BA02B93B9AB006476EC /* Tab.swift */; };
 		76294BA52B93C2B9006476EC /* BottomHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76294BA42B93C2B9006476EC /* BottomHelper.swift */; };
+		76896E3F2B94B7D000FF101C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E3E2B94B7D000FF101C /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		76294B932B934FA0006476EC /* driverbuddyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = driverbuddyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		76294BA02B93B9AB006476EC /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		76294BA42B93C2B9006476EC /* BottomHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomHelper.swift; sourceTree = "<group>"; };
+		76896E3E2B94B7D000FF101C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +106,6 @@
 				76294B782B934F9E006476EC /* ContentView.swift */,
 				76294B7A2B934FA0006476EC /* Assets.xcassets */,
 				76294B7C2B934FA0006476EC /* Preview Content */,
-				76294BA02B93B9AB006476EC /* Tab.swift */,
 			);
 			path = driverbuddy;
 			sourceTree = "<group>";
@@ -137,6 +138,8 @@
 		76294BA22B93BADB006476EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				76294BA02B93B9AB006476EC /* Tab.swift */,
+				76896E3E2B94B7D000FF101C /* Task.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			files = (
 				76294BA12B93B9AB006476EC /* Tab.swift in Sources */,
 				76294B792B934F9E006476EC /* ContentView.swift in Sources */,
+				76896E3F2B94B7D000FF101C /* Task.swift in Sources */,
 				76294BA52B93C2B9006476EC /* BottomHelper.swift in Sources */,
 				76294B772B934F9E006476EC /* driverbuddyApp.swift in Sources */,
 			);
