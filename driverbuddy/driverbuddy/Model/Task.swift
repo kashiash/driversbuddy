@@ -9,8 +9,8 @@ import Foundation
 import SwiftData
 import SwiftUI
 
-
-class task {
+@Model
+class Task {
   //  private(set) var taskId: String = UUID().uuidString
     var taskId: UUID = UUID()
     var taskDescription: String
