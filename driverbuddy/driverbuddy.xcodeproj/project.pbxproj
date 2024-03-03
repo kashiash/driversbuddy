@@ -18,6 +18,11 @@
 		76294BA52B93C2B9006476EC /* BottomHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76294BA42B93C2B9006476EC /* BottomHelper.swift */; };
 		76896E3F2B94B7D000FF101C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E3E2B94B7D000FF101C /* Task.swift */; };
 		76896E412B94C7B700FF101C /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E402B94C7B700FF101C /* Vehicle.swift */; };
+		76896E432B94DA5200FF101C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E422B94DA5200FF101C /* Event.swift */; };
+		76896E452B94DB9F00FF101C /* Odometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E442B94DB9F00FF101C /* Odometer.swift */; };
+		76896E472B94DC7100FF101C /* FuelUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E462B94DC7100FF101C /* FuelUp.swift */; };
+		76896E492B94DD8000FF101C /* EventElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E482B94DD8000FF101C /* EventElement.swift */; };
+		76896E4B2B94DE0000FF101C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E4A2B94DE0000FF101C /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +57,11 @@
 		76294BA42B93C2B9006476EC /* BottomHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomHelper.swift; sourceTree = "<group>"; };
 		76896E3E2B94B7D000FF101C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		76896E402B94C7B700FF101C /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		76896E422B94DA5200FF101C /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		76896E442B94DB9F00FF101C /* Odometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Odometer.swift; sourceTree = "<group>"; };
+		76896E462B94DC7100FF101C /* FuelUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelUp.swift; sourceTree = "<group>"; };
+		76896E482B94DD8000FF101C /* EventElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventElement.swift; sourceTree = "<group>"; };
+		76896E4A2B94DE0000FF101C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +153,11 @@
 				76294BA02B93B9AB006476EC /* Tab.swift */,
 				76896E3E2B94B7D000FF101C /* Task.swift */,
 				76896E402B94C7B700FF101C /* Vehicle.swift */,
+				76896E422B94DA5200FF101C /* Event.swift */,
+				76896E442B94DB9F00FF101C /* Odometer.swift */,
+				76896E462B94DC7100FF101C /* FuelUp.swift */,
+				76896E482B94DD8000FF101C /* EventElement.swift */,
+				76896E4A2B94DE0000FF101C /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -285,11 +300,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76896E472B94DC7100FF101C /* FuelUp.swift in Sources */,
+				76896E452B94DB9F00FF101C /* Odometer.swift in Sources */,
 				76896E412B94C7B700FF101C /* Vehicle.swift in Sources */,
 				76294BA12B93B9AB006476EC /* Tab.swift in Sources */,
 				76294B792B934F9E006476EC /* ContentView.swift in Sources */,
 				76896E3F2B94B7D000FF101C /* Task.swift in Sources */,
+				76896E4B2B94DE0000FF101C /* Item.swift in Sources */,
 				76294BA52B93C2B9006476EC /* BottomHelper.swift in Sources */,
+				76896E492B94DD8000FF101C /* EventElement.swift in Sources */,
+				76896E432B94DA5200FF101C /* Event.swift in Sources */,
 				76294B772B934F9E006476EC /* driverbuddyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

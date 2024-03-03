@@ -10,9 +10,9 @@ import SwiftData
 
 @Model
 class Vehicle {
- //   var pressureUnits: Int
+    var pressureUnits: PresureUnit = PresureUnit.psi
     var plate: String
-  //  var consumptionUnits: Int
+    var consumptionUnits: ConsumptionUnit = ConsumptionUnit.kmPerLiter
     var year: Int
 
     var trim: String
@@ -23,17 +23,17 @@ class Vehicle {
     var type: VehicleType = VehicleType.car
     var tpFront: Int
    var tpRear: Int
-    var status: Int
+    var status: Status = Status.active
     var fuelUnits: FuelUnit = FuelUnit.liters
   //  var make: String
-    var uuid: UUID = UUID()
+  //  var uuid: UUID = UUID()
   //  var model: String
     var vin: String
     var fuelType: FuelType = FuelType.gasoline
     var notes: String
     var registration: String
     
-    init(plate: String, year: Int, trim: String, creationDate: TimeInterval, name: String, units: Units, insurance: String, type: VehicleType, tpFront: Int, tpRear: Int, status: Int, fuelUnits: FuelUnit, uuid: UUID, vin: String, fuelType: FuelType, notes: String, registration: String) {
+    init(plate: String, year: Int, trim: String, creationDate: TimeInterval, name: String, units: Units, insurance: String, type: VehicleType, tpFront: Int, tpRear: Int, status: Status, fuelUnits: FuelUnit,vin: String, fuelType: FuelType, notes: String, registration: String) {
         self.plate = plate
         self.year = year
         self.trim = trim
@@ -46,7 +46,7 @@ class Vehicle {
         self.tpRear = tpRear
         self.status = status
         self.fuelUnits = fuelUnits
-        self.uuid = uuid
+    //    self.uuid = uuid
         self.vin = vin
         self.fuelType = fuelType
         self.notes = notes
@@ -55,9 +55,17 @@ class Vehicle {
 
 }
 
+enum Status: String ,Codable,CaseIterable {
+    case active = "Active"
+    case archived = "Archive"
+    case sold = "Sold"
+    case strage = "In Storage"
+}
+
 enum Units: String, Codable, CaseIterable {
     case km = "Kilometers"
-    case medimilum = "Miles"
+    case miles = "Miles"
+    case imperial = "Miles (Imperial)"
 }
 
 enum VehicleType: String, Codable, CaseIterable {
@@ -85,4 +93,11 @@ enum PresureUnit: String, Codable, CaseIterable {
     case bar = "Bar"
     case kpa = "Kilopascal"
     case psi = "Pound per square inch"
+}
+
+enum ConsumptionUnit: String, Codable, CaseIterable {
+    case kmPerLiter = "Kilometers / Liter"
+    case litersPer100km = "Liters /100 km"
+    case mpg = "MPG"
+    case imp = "MPG (Imperial)"
 }
