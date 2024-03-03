@@ -27,7 +27,7 @@ struct ContentView: View {
             VStack(alignment: .leading,spacing: 10, content: {
                 activeTab.tabContent
             })
-            .padding()
+         //   .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             .presentationDetents([.height(60), .medium,.large])
             .presentationCornerRadius(20)

@@ -13,5 +13,6 @@ struct driverbuddyApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: [CarMake.self,CarModel.self,Vehicle.self])
     }
 }

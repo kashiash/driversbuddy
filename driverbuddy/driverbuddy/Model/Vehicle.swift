@@ -25,16 +25,17 @@ class Vehicle {
    var tpRear: Int
     var status: Status = Status.active
     var fuelUnits: FuelUnit = FuelUnit.liters
-  //  var make: String
-  //  var uuid: UUID = UUID()
-  //  var model: String
+    var make: CarMake
+    var model: CarModel
     var vin: String
     var fuelType: FuelType = FuelType.gasoline
     var notes: String
     var registration: String
     
-    init(plate: String, year: Int, trim: String, creationDate: TimeInterval, name: String, units: Units, insurance: String, type: VehicleType, tpFront: Int, tpRear: Int, status: Status, fuelUnits: FuelUnit,vin: String, fuelType: FuelType, notes: String, registration: String) {
+    init(pressureUnits: PresureUnit, plate: String, consumptionUnits: ConsumptionUnit, year: Int, trim: String, creationDate: TimeInterval, name: String, units: Units, insurance: String, type: VehicleType, tpFront: Int, tpRear: Int, status: Status, fuelUnits: FuelUnit, make: CarMake, model: CarModel, vin: String, fuelType: FuelType, notes: String, registration: String) {
+        self.pressureUnits = pressureUnits
         self.plate = plate
+        self.consumptionUnits = consumptionUnits
         self.year = year
         self.trim = trim
         self.creationDate = creationDate
@@ -46,7 +47,8 @@ class Vehicle {
         self.tpRear = tpRear
         self.status = status
         self.fuelUnits = fuelUnits
-    //    self.uuid = uuid
+        self.make = make
+        self.model = model
         self.vin = vin
         self.fuelType = fuelType
         self.notes = notes
