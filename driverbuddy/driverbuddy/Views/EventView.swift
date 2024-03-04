@@ -16,99 +16,164 @@ struct EventView: View {
 
     var body: some View {
         Form{
-            VStack {
-                TextField("",text: $description)
+            VStack(alignment: .center) {
+                TextEditor(text: $description)
+                    .multilineTextAlignment(.leading)
+                      .frame(maxWidth: .infinity,minHeight: 200)
+
+
+
                 HStack {
                     DatePicker("", selection: $currentDate)
 
                     Text(timeRemaining())
-                        .font(.caption)
+
+                }
+                .frame(maxWidth: .infinity)
+                Grid(alignment:.center ,  horizontalSpacing: 0.2, verticalSpacing: 0.2) {
+
+                    GridRow {
+                        Button("09:30") {
+                            currentDate =   calendar.date(bySettingHour: 9, minute: 30, second: 0, of: currentDate)!
+                        }
+                        .buttonStyle(.plain)
+                        .frame(maxWidth: .infinity)
                         .padding()
+
+                        Button("12:00") {
+
+                            currentDate =   calendar.date(bySettingHour: 12, minute: 00, second: 0, of: currentDate)!
+                        }
+                        .buttonStyle(.plain)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+
+                        Button("18:30") {
+                            currentDate =   calendar.date(bySettingHour: 18, minute: 30, second: 0, of: currentDate)!
+                        }
+                        .buttonStyle(.plain)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+
+                        Button("22:00") {
+                            currentDate =   calendar.date(bySettingHour: 22, minute: 00, second: 0, of: currentDate)!
+                        }
+                        .buttonStyle(.plain)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+
+
+                    }.border(.separator, width: 1.0)
+
+                    GridRow {
+                        Button("+10 min") {
+                            currentDate =   currentDate.addingTimeInterval(10 * 60)
+                        }
+                        .buttonStyle(.plain)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+
+                        Button("+1 godz") {
+                            currentDate =    currentDate.addingTimeInterval(60 * 60)
+                        }
+                        .buttonStyle(.plain)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+
+                        Button("+3 godz") {
+
+                            currentDate =   currentDate.addingTimeInterval(3 * 60 * 60)
+                        }
+                        .buttonStyle(.plain)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+
+                        Button("+1 dzień") {
+                            currentDate =   currentDate.addingTimeInterval(24 * 60 * 60)
+                        }
+                        .buttonStyle(.plain)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+
+                    }.border(.separator, width: 1.0)
+
+                    GridRow {
+                        Button("-10 min") {
+                            currentDate =   currentDate.addingTimeInterval(-10 * 60)
+                        }
+                        .buttonStyle(.plain)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        Button("-1 godz") {
+                            currentDate =   currentDate.addingTimeInterval(-60 * 60)
+                        }
+                        .buttonStyle(.plain)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+
+                        Button("-3 godz") {
+                            currentDate =   currentDate.addingTimeInterval(-3 * 60 * 60)
+                        }
+                        .buttonStyle(.plain)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+
+                        Button("-1 dzień") {
+                            currentDate =   currentDate.addingTimeInterval(-24 * 60 * 60)
+                        }
+                        .buttonStyle(.plain)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+
+                    }.border(.separator, width: 1.0)
+
                 }
 
-               // LazyVGrid(columns: columns, spacing: 10) {
                 HStack {
-                    Button("09:30") { 
-                        currentDate =   calendar.date(bySettingHour: 9, minute: 30, second: 0, of: currentDate)!
+                    Button (role: .destructive){
+                    } label: {
+                        Image(systemName: "trash")
                     }
 
-                        .frame(maxWidth: .infinity)
-                        .buttonStyle(.borderedProminent)
-                    Button("12:00") {
+                    .buttonStyle(.bordered)
+                    .frame(maxWidth: .infinity)
 
-                        currentDate =   calendar.date(bySettingHour: 12, minute: 00, second: 0, of: currentDate)!
+                    Button {
+                    } label: {
+                        Image(systemName: "moon.zzz")
                     }
-                    .buttonStyle(.borderedProminent)
-                        .frame(maxWidth: .infinity)
-                    Button("18:30") { 
-                        currentDate =   calendar.date(bySettingHour: 18, minute: 30, second: 0, of: currentDate)!
+
+                    .buttonStyle(.bordered)
+                    .frame(maxWidth: .infinity)
+
+                    Button {
+                    } label: {
+                        Image(systemName: "plus.circle")
                     }
-                    .buttonStyle(.borderedProminent)
-                        .frame(maxWidth: .infinity)
-                    Button("22:00") {
-                        currentDate =   calendar.date(bySettingHour: 22, minute: 00, second: 0, of: currentDate)!
+
+                    .buttonStyle(.bordered)
+                    .frame(maxWidth: .infinity)
+
+                    Button {
+                    } label: {
+                        Image(systemName: "alarm")
                     }
-                    .buttonStyle(.borderedProminent)
-                        .frame(maxWidth: .infinity)
+
+                    .buttonStyle(.bordered)
+                    .frame(maxWidth: .infinity)
+
+                    Button {
+                    } label: {
+                        Image(systemName: "checkmark.circle")
+                    }
+
+                    .buttonStyle(.bordered)
+                    .frame(maxWidth: .infinity)
                 }
-              //  .padding()
-                .font(.caption)
-
-                HStack {
-                    Button("+10 min") { 
-                        currentDate =   currentDate.addingTimeInterval(10 * 60)
-                    }
-                    .buttonStyle(.borderedProminent)
-                        .frame(maxWidth: .infinity)
-                    Button("+1 godz") { 
-                        currentDate =    currentDate.addingTimeInterval(60 * 60)
-                    }
-                    .buttonStyle(.borderedProminent)
-                        .frame(maxWidth: .infinity)
-                    Button("+3 godz") {
-
-                        currentDate =   currentDate.addingTimeInterval(3 * 60 * 60)
-                    }
-                    .buttonStyle(.borderedProminent)
-                        .frame(maxWidth: .infinity)
-                    Button("+1 dzień") { 
-                        currentDate =   currentDate.addingTimeInterval(24 * 60 * 60)
-                    }
-                    .buttonStyle(.borderedProminent)
-                        .frame(maxWidth: .infinity)
-                }
-              //  .padding()
-                .font(.caption)
-
-                HStack {
-                    Button("-10 min") { 
-                        currentDate =   currentDate.addingTimeInterval(-10 * 60)
-                    }
-                    .buttonStyle(.borderedProminent)
-                        .frame(maxWidth: .infinity)
-                    Button("-1 godz") { 
-                        currentDate =   currentDate.addingTimeInterval(-60 * 60)
-                    }
-                    .buttonStyle(.borderedProminent)
-                        .frame(maxWidth: .infinity)
-                    Button("-3 godz") { 
-                        currentDate =   currentDate.addingTimeInterval(-3 * 60 * 60)
-                    }
-                    .buttonStyle(.borderedProminent)
-                        .frame(maxWidth: .infinity)
-                    Button("-1 dzień") { 
-
-                        currentDate =   currentDate.addingTimeInterval(-24 * 60 * 60)
-                    }
-                    .buttonStyle(.borderedProminent)
-                        .frame(maxWidth: .infinity)
-                }
-
-                .font(.caption)
             }
-            Button("OK") {}
-                .buttonStyle(.borderedProminent)
+            .font(.caption2)
         }
+
 
     }
 
@@ -120,7 +185,7 @@ struct EventView: View {
 
     func timeRemaining() -> String {
         let calendar = Calendar.current
-        let components = calendar.dateComponents([.hour, .minute], from: currentDate, to: Date())
+        let components = calendar.dateComponents([.day, .hour, .minute], from: Date(), to: currentDate)
         let hoursRemaining = components.hour ?? 0
         let minutesRemaining = components.minute ?? 0
 
