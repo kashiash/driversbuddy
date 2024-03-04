@@ -13,6 +13,9 @@ rejestrowanie tras np dla potrzeba rozliczania z urzędem skarbowym
 rejestrowanie zakupów
 import danych z transakcjami shell/orlen/bp inne ..
 
+rozpoznawanie kodu Aztec z dowodu rejestracyjnego
+rozpoznawanie paragonów i faktur zakupowych
+
 wykorzystane technologie serwis c# + ms sql (ewentualnie vapor + postgres)
 swiftUI, Swift SwiftData
 
