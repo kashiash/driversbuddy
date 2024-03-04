@@ -17,8 +17,11 @@ struct CarModelListView: View {
         NavigationStack {
             List {
                 ForEach(carModel) { model in
-                    Text(model.make.Name)
-                    Text(model.name)
+                    VStack {
+                        Text(model.name).font(.title)
+                        Text(model.make.Name).font(.callout)
+
+                    }
                 }
             }
         }

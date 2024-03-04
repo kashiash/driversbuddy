@@ -33,6 +33,7 @@
 		76896E5D2B952B6900FF101C /* CarMakeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E5C2B952B6900FF101C /* CarMakeListView.swift */; };
 		76896E5F2B952C1600FF101C /* CarModelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E5E2B952C1600FF101C /* CarModelListView.swift */; };
 		76896E622B952F6A00FF101C /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E612B952F6A00FF101C /* WebService.swift */; };
+		76896E642B959DEF00FF101C /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E632B959DEF00FF101C /* HTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		76896E5C2B952B6900FF101C /* CarMakeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMakeListView.swift; sourceTree = "<group>"; };
 		76896E5E2B952C1600FF101C /* CarModelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModelListView.swift; sourceTree = "<group>"; };
 		76896E612B952F6A00FF101C /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		76896E632B959DEF00FF101C /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				76896E612B952F6A00FF101C /* WebService.swift */,
+				76896E632B959DEF00FF101C /* HTTPClient.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				76896E5D2B952B6900FF101C /* CarMakeListView.swift in Sources */,
 				76896E5F2B952C1600FF101C /* CarModelListView.swift in Sources */,
 				76896E412B94C7B700FF101C /* Vehicle.swift in Sources */,
+				76896E642B959DEF00FF101C /* HTTPClient.swift in Sources */,
 				76896E512B94F0EB00FF101C /* CarSerie.swift in Sources */,
 				76294BA12B93B9AB006476EC /* Tab.swift in Sources */,
 				76896E532B94F0FA00FF101C /* CarGeneration.swift in Sources */,

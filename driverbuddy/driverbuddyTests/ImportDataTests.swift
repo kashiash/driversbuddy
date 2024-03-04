@@ -7,6 +7,8 @@
 
 import XCTest
 import SwiftCSV
+@testable import driverbuddy
+
 
 final class ImportDataTests: XCTestCase {
 
@@ -18,91 +20,75 @@ final class ImportDataTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-//    func testGetMakes() throws {
-//
-//        let url = URL(string: "https://gist.githubusercontent.com/kashiash/54a66f7171a81bec767e96cdcb8d2212/raw/a0e74a0ec62a17c2741a8a23fb806d48aef5d13f/makes.csv")!
-//
-//        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-//            // Check for errors
-//            if let error = error {
-//                print("Error: \(error)")
-//                return
-//            }
-//
-//            // Check if data is not nil
-//            guard let data = data else {
-//                print("No data received")
-//                return
-//            }
-//
-//            // Convert Data to String
-//            if let resultString = String(data: data, encoding: .utf8) {
-//                print("CSV Content:\n\(resultString)")
-//
-//
-//
-//                let csv: CSV = try CSV<Named>(string: resultString)
-//
-//
-//                print(csv.header)
-//                csv.enumerateAsDict { dict in
-//
-//                    var makeId = dict["'id_car_make'"]?.replacingOccurrences(of: "'", with: "")
-//                    var makeName = dict["'name'"]?.replacingOccurrences(of: "'", with: "")
-//
-//                    print("\(makeId) \(makeName) ")
-//                }
-//
-//
-//            } else {
-//                print("Unable to convert Data to String")
-//            }
-//        }
-//
-//        // Start the URLSession data task
-//        task.resume()
-//
-//    }
+    func testGetMakes() async throws {
+
+        let makesUrl = URL(string: "https://gist.githubusercontent.com/kashiash/54a66f7171a81bec767e96cdcb8d2212/raw/a0e74a0ec62a17c2741a8a23fb806d48aef5d13f/makes.csv")!
+
+        let httpClient = HTTPClient()
+
+        let resource = Resource(url: makesUrl,modelType: String.self)
 
 
-    func test_getModels() throws {
+         let   resultString = try await httpClient.load(resource)
+
+            print("CSV Content:\n\(resultString)")
 
 
-        let gistRawURL = "https://gist.githubusercontent.com/kashiash/54a66f7171a81bec767e96cdcb8d2212/raw/a0e74a0ec62a17c2741a8a23fb806d48aef5d13f/makes.csv"
 
-        // Create a URL from the Gist Raw URL
-        if let url = URL(string: gistRawURL) {
-            do {
-                // Download the CSV file content
-                let csvContent = try String(contentsOf: url)
-                //   print(csvContent)
-
-                do {
-                    // As a string, guessing the delimiter
-                    let csv: CSV = try CSV<Named>(string: csvContent)
+            let csv: CSV = try CSV<Named>(string: resultString)
 
 
-                    print(csv.header)
-                    do {
+            print(csv.header)
+           try csv.enumerateAsDict { dict in
 
-                        try   csv.enumerateAsDict { dict in
+                var makeId = dict["'id_car_make'"]?.replacingOccurrences(of: "'", with: "")
+                var makeName = dict["'name'"]?.replacingOccurrences(of: "'", with: "")
 
-                            var makeId = dict["'id_car_make'"]?.replacingOccurrences(of: "'", with: "")
-                            var makeName = dict["'name'"]?.replacingOccurrences(of: "'", with: "")
-
-                            print("\(makeId) \(makeName) ")
-                        }
-                    } catch {
-                        print(error)
-                    }
-                }
-
-            } catch {
-                print(error)
+               print("\(String(describing: makeId)) \(String(describing: makeName)) ")
             }
-        }
+
+
 
     }
+
+
+    func testGetModels() async throws {
+
+        let modelsUrl = URL(string: "https://gist.githubusercontent.com/kashiash/cb020f31991328be05998fbb2e450731/raw/29e8617c9a51ceeaa7b695b318d5dc03fbe8ebfc/models.csv")!
+
+        let httpClient = HTTPClient()
+
+        let resource = Resource(url: modelsUrl,modelType: String.self)
+
+
+         let   resultString = try await httpClient.load(resource)
+
+         //   print("CSV Content:\n\(resultString)")
+
+
+
+        let csv: CSV = try CSV<Named>(string: resultString)
+        print("pobrano: \(csv.rows)")
+
+        try   csv.enumerateAsDict { dict in
+            if  let makeIdString = dict["'id_car_make'"]?.replacingOccurrences(of: "'", with: ""),
+                let modelIdString = dict["'id_car_model'"]?.replacingOccurrences(of: "'", with: ""),
+                let modelName = dict["'name'"]?.replacingOccurrences(of: "'", with: ""),
+
+                    let makeId = Int(makeIdString),
+                let modelId = Int(modelIdString)
+
+            {
+                print("\(makeId) \(modelId) \(modelName) ")
+
+            }
+
+        }
+
+
+
+    }
+
 
 
     func testPerformanceExample() throws {
