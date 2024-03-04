@@ -91,6 +91,30 @@ final class ImportDataTests: XCTestCase {
 
 
 
+
+    func testGetStations() async throws {
+        let stationsUrl =  URL(string: "https://gist.githubusercontent.com/kashiash/ee74ce7dda606ccd02fc6ffeb8f8ad7e/raw/fb5a3e1bb6aedd1a5babfdf255f226da142a31ca/gistfile.txt")!  //add one
+        let httpClient = HTTPClient()
+
+        let resource = Resource(url: stationsUrl,modelType: String.self)
+
+
+         let   resultString = try await httpClient.load(resource)
+
+            print("CSV Content:\n\(resultString)")
+
+
+
+            let csv: CSV = try CSV<Named>(string: resultString)
+
+
+            print(csv.header)
+
+
+        "Tankstelle;Werkstatt;Reinigung;Akz Nr.;Marke;Name;Land;ZIP;Ort;Anschrift;Telefon Nr;SELECT-Station;24h Service;DocStop;Nähe Autobahn;Autobahn TS;Autohof;Hochleistungszapfsäule;Sondertankpunkt;Aral Sondertankpunkt;UTA-Empfehlung;elektr. Führerscheinkontrolle;Parkplatz;Parkplatzbewachung;Restaurant;Imbiss;Fahrerwaschraum;GO Box Vertriebsstelle;Mautterminal;OBU Einbauservice;Automat ganz;Automat teilweise;AdBlue Kanister;AdBlue Zapfsäule;Autogas;Biodiesel;Erdgas;Pflanzenöl;Flüssigerdgas;HVO100;LKW Außenreinigung;Tankwagen Innenreinigung;Silofahrzeug Innenreinigung;Kühlfahrzeug Innenreinigung;Lebensmittelfahrzeug Innenreinigung;Geocodierung;Lieferantennr.;Supplier;Preiszone"
+    }
+
+
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {

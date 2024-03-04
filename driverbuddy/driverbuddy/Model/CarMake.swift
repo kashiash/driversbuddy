@@ -11,10 +11,10 @@ import SwiftData
 @Model
 class CarMake {
     var makeId: Int
-    var Name: String
+    var name: String
 
     init(makeId: Int, name: String) {
         self.makeId = makeId
-        self.Name = name
+        self.name = name
     }
 }

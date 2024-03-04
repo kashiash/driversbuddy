@@ -34,6 +34,9 @@
 		76896E5F2B952C1600FF101C /* CarModelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E5E2B952C1600FF101C /* CarModelListView.swift */; };
 		76896E622B952F6A00FF101C /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E612B952F6A00FF101C /* WebService.swift */; };
 		76896E642B959DEF00FF101C /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E632B959DEF00FF101C /* HTTPClient.swift */; };
+		76896E662B95BF4400FF101C /* VehicleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E652B95BF4400FF101C /* VehicleListView.swift */; };
+		76896E692B95D31100FF101C /* VehicleCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E682B95D31100FF101C /* VehicleCellView.swift */; };
+		76896E6B2B95D4A100FF101C /* VehicleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E6A2B95D4A100FF101C /* VehicleDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,9 @@
 		76896E5E2B952C1600FF101C /* CarModelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModelListView.swift; sourceTree = "<group>"; };
 		76896E612B952F6A00FF101C /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		76896E632B959DEF00FF101C /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		76896E652B95BF4400FF101C /* VehicleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleListView.swift; sourceTree = "<group>"; };
+		76896E682B95D31100FF101C /* VehicleCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleCellView.swift; sourceTree = "<group>"; };
+		76896E6A2B95D4A100FF101C /* VehicleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,7 @@
 		76294B752B934F9E006476EC /* driverbuddy */ = {
 			isa = PBXGroup;
 			children = (
+				76896E672B95D2EF00FF101C /* Views */,
 				76896E602B952F4100FF101C /* Network */,
 				76896E5B2B952B5200FF101C /* Screens */,
 				76294BA32B93BAE5006476EC /* Helpers */,
@@ -205,6 +212,8 @@
 			children = (
 				76896E5C2B952B6900FF101C /* CarMakeListView.swift */,
 				76896E5E2B952C1600FF101C /* CarModelListView.swift */,
+				76896E652B95BF4400FF101C /* VehicleListView.swift */,
+				76896E6A2B95D4A100FF101C /* VehicleDetailView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -216,6 +225,14 @@
 				76896E632B959DEF00FF101C /* HTTPClient.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		76896E672B95D2EF00FF101C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				76896E682B95D31100FF101C /* VehicleCellView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,12 +382,15 @@
 				76896E532B94F0FA00FF101C /* CarGeneration.swift in Sources */,
 				76294B792B934F9E006476EC /* ContentView.swift in Sources */,
 				76896E3F2B94B7D000FF101C /* Task.swift in Sources */,
+				76896E692B95D31100FF101C /* VehicleCellView.swift in Sources */,
 				76896E4B2B94DE0000FF101C /* Item.swift in Sources */,
 				76896E622B952F6A00FF101C /* WebService.swift in Sources */,
 				76294BA52B93C2B9006476EC /* BottomHelper.swift in Sources */,
+				76896E6B2B95D4A100FF101C /* VehicleDetailView.swift in Sources */,
 				76896E552B94F10C00FF101C /* CarTrim.swift in Sources */,
 				76896E4D2B94F0B400FF101C /* CarMake.swift in Sources */,
 				76896E492B94DD8000FF101C /* EventElement.swift in Sources */,
+				76896E662B95BF4400FF101C /* VehicleListView.swift in Sources */,
 				76896E4F2B94F0D200FF101C /* CarModel.swift in Sources */,
 				76896E432B94DA5200FF101C /* Event.swift in Sources */,
 				76294B772B934F9E006476EC /* driverbuddyApp.swift in Sources */,

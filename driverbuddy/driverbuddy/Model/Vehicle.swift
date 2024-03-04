@@ -15,8 +15,8 @@ class Vehicle {
     var consumptionUnits: ConsumptionUnit = ConsumptionUnit.kmPerLiter
     var year: Int
 
-    var trim: String
-    var creationDate: TimeInterval
+    var trim: String?
+    var creationDate: Date
     var name: String
     var units: Units = Units.km
     var insurance: String
@@ -25,14 +25,14 @@ class Vehicle {
    var tpRear: Int
     var status: Status = Status.active
     var fuelUnits: FuelUnit = FuelUnit.liters
-    var make: CarMake
-    var model: CarModel
+    var make: CarMake?
+    var model: CarModel?
     var vin: String
     var fuelType: FuelType = FuelType.gasoline
     var notes: String
     var registration: String
     
-    init(pressureUnits: PresureUnit, plate: String, consumptionUnits: ConsumptionUnit, year: Int, trim: String, creationDate: TimeInterval, name: String, units: Units, insurance: String, type: VehicleType, tpFront: Int, tpRear: Int, status: Status, fuelUnits: FuelUnit, make: CarMake, model: CarModel, vin: String, fuelType: FuelType, notes: String, registration: String) {
+    init(pressureUnits: PresureUnit, plate: String, consumptionUnits: ConsumptionUnit, year: Int, trim: String? = nil, creationDate: Date, name: String, units: Units, insurance: String, type: VehicleType, tpFront: Int, tpRear: Int, status: Status, fuelUnits: FuelUnit, make: CarMake? = nil, model: CarModel? = nil, vin: String, fuelType: FuelType, notes: String, registration: String) {
         self.pressureUnits = pressureUnits
         self.plate = plate
         self.consumptionUnits = consumptionUnits

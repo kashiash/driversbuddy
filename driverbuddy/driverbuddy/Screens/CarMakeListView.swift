@@ -12,13 +12,13 @@ struct CarMakeListView: View {
 
 
     @Environment(\.modelContext) var modelContext
-    @Query(sort: \CarMake.Name) var carMakes: [CarMake]
+    @Query(sort: \CarMake.name) var carMakes: [CarMake]
 
     var body: some View {
         NavigationStack {
             List {
                 ForEach(carMakes) { make in
-                    Text(make.Name)
+                    Text(make.name)
                 }
             }
         }
@@ -30,6 +30,6 @@ struct CarMakeListView: View {
     }
 }
 
-//#Preview {
-//    CarMakeListView()
-//}
+#Preview {
+    CarMakeListView()
+}
