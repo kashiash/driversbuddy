@@ -82,11 +82,6 @@ struct HTTPClient {
             var components = URLComponents(url: resource.url, resolvingAgainstBaseURL: false)
             components?.queryItems = queryItems
 
-            guard let url = components?.url else {
-                throw NetworkError.badRequest
-            }
-
-
         case .post(let data):
             request.httpMethod = resource.method.name
             request.httpBody = data

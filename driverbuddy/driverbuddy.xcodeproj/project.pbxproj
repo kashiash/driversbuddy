@@ -38,6 +38,8 @@
 		76896E692B95D31100FF101C /* VehicleCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E682B95D31100FF101C /* VehicleCellView.swift */; };
 		76896E6B2B95D4A100FF101C /* VehicleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E6A2B95D4A100FF101C /* VehicleDetailView.swift */; };
 		76896E6D2B96065100FF101C /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E6C2B96065100FF101C /* EventView.swift */; };
+		76896E6F2B973EF000FF101C /* TextIconField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E6E2B973EF000FF101C /* TextIconField.swift */; };
+		76896E712B973FC100FF101C /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E702B973FC100FF101C /* TextInputField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		76896E682B95D31100FF101C /* VehicleCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleCellView.swift; sourceTree = "<group>"; };
 		76896E6A2B95D4A100FF101C /* VehicleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailView.swift; sourceTree = "<group>"; };
 		76896E6C2B96065100FF101C /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		76896E6E2B973EF000FF101C /* TextIconField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextIconField.swift; sourceTree = "<group>"; };
+		76896E702B973FC100FF101C /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +238,8 @@
 			children = (
 				76896E682B95D31100FF101C /* VehicleCellView.swift */,
 				76896E6C2B96065100FF101C /* EventView.swift */,
+				76896E6E2B973EF000FF101C /* TextIconField.swift */,
+				76896E702B973FC100FF101C /* TextInputField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -384,6 +390,7 @@
 				76294BA12B93B9AB006476EC /* Tab.swift in Sources */,
 				76896E532B94F0FA00FF101C /* CarGeneration.swift in Sources */,
 				76294B792B934F9E006476EC /* ContentView.swift in Sources */,
+				76896E712B973FC100FF101C /* TextInputField.swift in Sources */,
 				76896E3F2B94B7D000FF101C /* Task.swift in Sources */,
 				76896E692B95D31100FF101C /* VehicleCellView.swift in Sources */,
 				76896E4B2B94DE0000FF101C /* Item.swift in Sources */,
@@ -393,6 +400,7 @@
 				76896E6B2B95D4A100FF101C /* VehicleDetailView.swift in Sources */,
 				76896E552B94F10C00FF101C /* CarTrim.swift in Sources */,
 				76896E4D2B94F0B400FF101C /* CarMake.swift in Sources */,
+				76896E6F2B973EF000FF101C /* TextIconField.swift in Sources */,
 				76896E492B94DD8000FF101C /* EventElement.swift in Sources */,
 				76896E662B95BF4400FF101C /* VehicleListView.swift in Sources */,
 				76896E4F2B94F0D200FF101C /* CarModel.swift in Sources */,

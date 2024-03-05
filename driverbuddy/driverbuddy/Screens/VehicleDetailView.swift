@@ -51,7 +51,7 @@ struct VehicleDetailView: View {
 
                         Image(systemName:"car").frame(width:25)
 
-                        TextInputField("Make",  text: $name)
+                        TextInputField("Make",  text: $plate)
 
                     }
 
@@ -59,10 +59,10 @@ struct VehicleDetailView: View {
 
                         Image(systemName:"car.2").frame(width:25)
 
-
+                        TextInputField("Model", text: $name)
 
                     }
-                    TextInputField("Model", text: .constant("DMC 12"))
+
 
 
 
@@ -139,49 +139,6 @@ struct VehicleDetailView: View {
     }
 }
 
-struct TextInputField: View {
-    var title: String
-    @Binding var text: String
 
-    init(_ title:String ,text:Binding<String>) {
-        self.title = title
-        self._text = text
-    }
-    var body: some View {
 
-            ZStack(alignment: .leading) {
-                Text(title)
-                    .foregroundColor(text.isEmpty ?  Color(.placeholderText) : .accentColor)
-                    .offset(y: text.isEmpty ? 0: -25)
-                    .scaleEffect(text.isEmpty ? 1: 0.8,anchor: .leading)
 
-                TextField("", text: $text)
-            }
-            .padding(.top,15)
-            .animation(
-                .easeInOut(duration: 1)
-                    .repeatForever(autoreverses: false),
-                value: 1.5
-            )
-
-    }
-}
-
-struct TextIconField: View {
-    var title: String
-    @Binding var text: String
-    var systemName: String
-
-    init(_ title:String ,text:Binding<String>, systemName: String) {
-        self.title = title
-        self._text = text
-        self.systemName = systemName
-    }
-
-    var body: some View {
-        HStack{
-            Image(systemName:systemName).frame(width:25)
-            TextField(title, text: $text)
-        }
-    }
-}
