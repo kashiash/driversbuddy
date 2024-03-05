@@ -10,10 +10,29 @@ import SwiftUI
 struct TextInputField: View {
     var title: String
     @Binding var text: String
+    @Environment(\.clearButtonHidden) var clearButtonHidden
+    @Environment(\.mykeyboardType) var mykeyboardType: UIKeyboardType
 
     init(_ title:String ,text:Binding<String>) {
         self.title = title
         self._text = text
+    }
+
+
+    var clearButton: some View {
+        HStack {
+            if !clearButtonHidden {
+                Spacer()
+                Button(action: {
+                    text = ""
+                }) {
+                    Image(systemName:"multiply.circle.fill")
+                        .foregroundColor(Color(.systemGray))
+                }
+            } else {
+                EmptyView()
+            }
+        }
     }
     var body: some View {
 
@@ -26,16 +45,9 @@ struct TextInputField: View {
                 TextField("", text: $text)
                     .padding(.trailing,12)
                     .overlay(
-                        HStack {
-                            Spacer()
-                            Button(action: {
-                                text = ""
-                            }, label: {
-                                Image(systemName:"multiply.circle.fill")
-                                    .foregroundColor(Color(.systemGray))
-                        })
-                        }
+                        clearButton
                     )
+                    .keyboardType(mykeyboardType)
             }
             .padding(.top,15)
             .animation(
@@ -47,14 +59,46 @@ struct TextInputField: View {
     }
 }
 
+extension View {
+  func clearButtonHidden(_ hidesClearButton: Bool = true) -> some View {
+    environment(\.clearButtonHidden, hidesClearButton)
+  }
+
+    func mykeyboardType(_ mykeyboardType: UIKeyboardType = .default) -> some View {
+      environment(\.mykeyboardType, mykeyboardType)
+    }
+}
+
+private struct TextInputFieldClearButtonHidden: EnvironmentKey {
+  static var defaultValue: Bool = false
+}
+private struct TextInputFieldKeyboardType: EnvironmentKey {
+    static var defaultValue: UIKeyboardType = .default
+}
+
+extension EnvironmentValues {
+  var clearButtonHidden: Bool {
+    get { self[TextInputFieldClearButtonHidden.self] }
+    set { self[TextInputFieldClearButtonHidden.self] = newValue }
+  }
+
+    var mykeyboardType: UIKeyboardType {
+      get { self[TextInputFieldKeyboardType.self] }
+      set { self[TextInputFieldKeyboardType.self] = newValue }
+    }
+}
+
 #Preview {
 
 
     TextInputField("First Name", text: .constant("Some value"))
+        .previewLayout(.sizeThatFits)
+        .clearButtonHidden()
 
 }
 
 #Preview {
     TextInputField("First Name", text: .constant("Some value terefere dlugi napis. poszly konie po betonie"))
         .preferredColorScheme(.dark)
+        .mykeyboardType(.decimalPad)
 }
