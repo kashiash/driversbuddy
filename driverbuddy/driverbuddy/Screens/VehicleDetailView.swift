@@ -13,7 +13,7 @@ struct VehicleDetailView: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
 
-    @State private var isEditing = false
+    @State private var isEditing = true
 
     @State private var name: String = ""
     @State private var plate: String = ""
@@ -34,18 +34,14 @@ struct VehicleDetailView: View {
             if isEditing {
 
                 VStack(alignment: .trailing) {
-                    HStack{
-                        Image(systemName:"pencil")
-                        TextField("Vehicle Name", text: $name)
-                    }
+                    TextInputField("Vehicle Name",text: $name)
+
+
+                    TextIconField("Vehicle Name",text: $name,systemName:"pencil.circle")
+
                     HStack{
 
-                        Image(systemName:"envelope")
-                        TextField("Plate number", text: $plate)
-                    }
-                    HStack{
-
-                        Image(systemName:"envelope")
+                        Image(systemName:"envelope").frame(width:25)
 
                         TextField("Published year", value: $year, formatter: NumberFormatter())
                             .keyboardType(.numberPad)
@@ -53,24 +49,25 @@ struct VehicleDetailView: View {
 
                     HStack{
 
-                        Image(systemName:"car")
+                        Image(systemName:"car").frame(width:25)
 
-                        TextField("Make",  text: .constant("Delorean"))
-                            .keyboardType(.numberPad)
+                        TextInputField("Make",  text: $name)
+
                     }
 
                     HStack{
 
-                        Image(systemName:"car.2")
+                        Image(systemName:"car.2").frame(width:25)
 
-                        TextField("Model", text: .constant("DMC 12"))
-                            .keyboardType(.numberPad)
+
+
                     }
+                    TextInputField("Model", text: .constant("DMC 12"))
 
 
 
                 }
-                .textFieldStyle(.roundedBorder)
+             //   .textFieldStyle(.roundedBorder)
 
 
                 Button("Save") {
@@ -119,7 +116,7 @@ struct VehicleDetailView: View {
                                     , year: 2008
                                     , trim: nil
                                     , creationDate: .now
-                                    , name: "Złoty Szerszeń"
+                                    , name: "A"
                                     , units: Units.km
                                     , insurance: "PZU"
                                     , type: VehicleType.car
@@ -139,5 +136,52 @@ struct VehicleDetailView: View {
             .modelContainer(container)
     } catch {
         fatalError("Failed to create model container")
+    }
+}
+
+struct TextInputField: View {
+    var title: String
+    @Binding var text: String
+
+    init(_ title:String ,text:Binding<String>) {
+        self.title = title
+        self._text = text
+    }
+    var body: some View {
+
+            ZStack(alignment: .leading) {
+                Text(title)
+                    .foregroundColor(text.isEmpty ?  Color(.placeholderText) : .accentColor)
+                    .offset(y: text.isEmpty ? 0: -25)
+                    .scaleEffect(text.isEmpty ? 1: 0.8,anchor: .leading)
+
+                TextField("", text: $text)
+            }
+            .padding(.top,15)
+            .animation(
+                .easeInOut(duration: 1)
+                    .repeatForever(autoreverses: false),
+                value: 1.5
+            )
+
+    }
+}
+
+struct TextIconField: View {
+    var title: String
+    @Binding var text: String
+    var systemName: String
+
+    init(_ title:String ,text:Binding<String>, systemName: String) {
+        self.title = title
+        self._text = text
+        self.systemName = systemName
+    }
+
+    var body: some View {
+        HStack{
+            Image(systemName:systemName).frame(width:25)
+            TextField(title, text: $text)
+        }
     }
 }
