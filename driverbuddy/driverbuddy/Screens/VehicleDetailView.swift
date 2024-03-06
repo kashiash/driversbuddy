@@ -18,14 +18,15 @@ struct VehicleDetailView: View {
     @State private var name: String = ""
     @State private var plate: String = ""
     @State private var year: Int? = nil
+    @State private var testString: String = "Lorem ipsum"
 
 
 
     init(vehicle: Vehicle) {
         self.vehicle = vehicle
-        self._name = State.init(initialValue: vehicle.name)
+        self._name  = State.init(initialValue: vehicle.name)
         self._plate = State.init(initialValue: vehicle.plate)
-        self._year = State.init(initialValue: vehicle.year)
+        self._year  = State.init(initialValue: vehicle.year)
     }
 
     var body: some View {
@@ -35,36 +36,13 @@ struct VehicleDetailView: View {
 
                 VStack(alignment: .trailing) {
                     TextInputField("Vehicle Name",text: $name)
+                        .clearButtonHidden(false)
 
+                    TextInputField("Make",  text: $plate)
+                        .clearButtonHidden(false)
 
-                    TextIconField("Vehicle Name",text: $name,systemName:"pencil.circle")
-
-                    HStack{
-
-                        Image(systemName:"envelope").frame(width:25)
-
-                        TextField("Published year", value: $year, formatter: NumberFormatter())
-                            .keyboardType(.numberPad)
-                    }
-
-                    HStack{
-
-                        Image(systemName:"car").frame(width:25)
-
-                        TextInputField("Make",  text: $plate)
-
-                    }
-
-                    HStack{
-
-                        Image(systemName:"car.2").frame(width:25)
-
-                        TextInputField("Model", text: $name)
-
-                    }
-
-
-
+                    TextInputField("Make",  text: $testString)
+                        .clearButtonHidden(false)
 
                 }
              //   .textFieldStyle(.roundedBorder)
@@ -116,7 +94,7 @@ struct VehicleDetailView: View {
                                     , year: 2008
                                     , trim: nil
                                     , creationDate: .now
-                                    , name: "A"
+                                    , name: "Silver Hornet"
                                     , units: Units.km
                                     , insurance: "PZU"
                                     , type: VehicleType.car

@@ -18,6 +18,8 @@ class Task {
     var notes: String
     var isCompleted:Bool = false
     var priority: Priority = Priority.normal
+    var lastUpdate: Date = Date.now
+
 
     init(taskDescription: String, dueDate: Date, notes: String, isCompleted: Bool, priority: Priority) {
         self.taskDescription = taskDescription

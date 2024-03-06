@@ -40,6 +40,7 @@
 		76896E6D2B96065100FF101C /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E6C2B96065100FF101C /* EventView.swift */; };
 		76896E6F2B973EF000FF101C /* TextIconField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E6E2B973EF000FF101C /* TextIconField.swift */; };
 		76896E712B973FC100FF101C /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E702B973FC100FF101C /* TextInputField.swift */; };
+		76896E732B97640300FF101C /* ShippingForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E722B97640300FF101C /* ShippingForm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		76896E6C2B96065100FF101C /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		76896E6E2B973EF000FF101C /* TextIconField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextIconField.swift; sourceTree = "<group>"; };
 		76896E702B973FC100FF101C /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
+		76896E722B97640300FF101C /* ShippingForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 		76294B752B934F9E006476EC /* driverbuddy */ = {
 			isa = PBXGroup;
 			children = (
+				76896E742B97BCDF00FF101C /* Tests */,
 				76896E672B95D2EF00FF101C /* Views */,
 				76896E602B952F4100FF101C /* Network */,
 				76896E5B2B952B5200FF101C /* Screens */,
@@ -242,6 +245,14 @@
 				76896E702B973FC100FF101C /* TextInputField.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		76896E742B97BCDF00FF101C /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				76896E722B97640300FF101C /* ShippingForm.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,6 +402,7 @@
 				76896E532B94F0FA00FF101C /* CarGeneration.swift in Sources */,
 				76294B792B934F9E006476EC /* ContentView.swift in Sources */,
 				76896E712B973FC100FF101C /* TextInputField.swift in Sources */,
+				76896E732B97640300FF101C /* ShippingForm.swift in Sources */,
 				76896E3F2B94B7D000FF101C /* Task.swift in Sources */,
 				76896E692B95D31100FF101C /* VehicleCellView.swift in Sources */,
 				76896E4B2B94DE0000FF101C /* Item.swift in Sources */,
