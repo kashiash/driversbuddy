@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		762102E32B9910D50090982A /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762102E22B9910D40090982A /* TaskListView.swift */; };
+		762102E52B9917260090982A /* CompletedTaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762102E42B9917260090982A /* CompletedTaskList.swift */; };
 		76294B772B934F9E006476EC /* driverbuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76294B762B934F9E006476EC /* driverbuddyApp.swift */; };
 		76294B792B934F9E006476EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76294B782B934F9E006476EC /* ContentView.swift */; };
 		76294B7B2B934FA0006476EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76294B7A2B934FA0006476EC /* Assets.xcassets */; };
@@ -61,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		762102E22B9910D40090982A /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		762102E42B9917260090982A /* CompletedTaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTaskList.swift; sourceTree = "<group>"; };
 		76294B732B934F9E006476EC /* driverbuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = driverbuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76294B762B934F9E006476EC /* driverbuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = driverbuddyApp.swift; sourceTree = "<group>"; };
 		76294B782B934F9E006476EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -223,6 +227,7 @@
 				76896E5E2B952C1600FF101C /* CarModelListView.swift */,
 				76896E652B95BF4400FF101C /* VehicleListView.swift */,
 				76896E6A2B95D4A100FF101C /* VehicleDetailView.swift */,
+				762102E22B9910D40090982A /* TaskListView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 				76896E6C2B96065100FF101C /* EventView.swift */,
 				76896E6E2B973EF000FF101C /* TextIconField.swift */,
 				76896E702B973FC100FF101C /* TextInputField.swift */,
+				762102E42B9917260090982A /* CompletedTaskList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -398,12 +404,14 @@
 				76896E412B94C7B700FF101C /* Vehicle.swift in Sources */,
 				76896E642B959DEF00FF101C /* HTTPClient.swift in Sources */,
 				76896E512B94F0EB00FF101C /* CarSerie.swift in Sources */,
+				762102E32B9910D50090982A /* TaskListView.swift in Sources */,
 				76294BA12B93B9AB006476EC /* Tab.swift in Sources */,
 				76896E532B94F0FA00FF101C /* CarGeneration.swift in Sources */,
 				76294B792B934F9E006476EC /* ContentView.swift in Sources */,
 				76896E712B973FC100FF101C /* TextInputField.swift in Sources */,
 				76896E732B97640300FF101C /* ShippingForm.swift in Sources */,
 				76896E3F2B94B7D000FF101C /* Task.swift in Sources */,
+				762102E52B9917260090982A /* CompletedTaskList.swift in Sources */,
 				76896E692B95D31100FF101C /* VehicleCellView.swift in Sources */,
 				76896E4B2B94DE0000FF101C /* Item.swift in Sources */,
 				76896E622B952F6A00FF101C /* WebService.swift in Sources */,
