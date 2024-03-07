@@ -44,6 +44,15 @@
 		76896E712B973FC100FF101C /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E702B973FC100FF101C /* TextInputField.swift */; };
 		76896E732B97640300FF101C /* ShippingForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E722B97640300FF101C /* ShippingForm.swift */; };
 		76A135582B9A65B600E1C9AB /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135572B9A65B600E1C9AB /* TaskRowView.swift */; };
+		76A135602B9A791800E1C9AB /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A1355F2B9A791800E1C9AB /* WidgetKit.framework */; };
+		76A135622B9A791800E1C9AB /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A135612B9A791800E1C9AB /* SwiftUI.framework */; };
+		76A135652B9A791800E1C9AB /* TaskListBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135642B9A791800E1C9AB /* TaskListBundle.swift */; };
+		76A135672B9A791800E1C9AB /* TaskListLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135662B9A791800E1C9AB /* TaskListLiveActivity.swift */; };
+		76A135692B9A791800E1C9AB /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135682B9A791800E1C9AB /* TaskList.swift */; };
+		76A1356B2B9A791800E1C9AB /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A1356A2B9A791800E1C9AB /* AppIntent.swift */; };
+		76A1356D2B9A791900E1C9AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A1356C2B9A791900E1C9AB /* Assets.xcassets */; };
+		76A135712B9A791900E1C9AB /* TaskListExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 76A1355D2B9A791700E1C9AB /* TaskListExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		76A135762B9A797200E1C9AB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E3E2B94B7D000FF101C /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +70,28 @@
 			remoteGlobalIDString = 76294B722B934F9E006476EC;
 			remoteInfo = driverbuddy;
 		};
+		76A1356F2B9A791900E1C9AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76294B6B2B934F9E006476EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 76A1355C2B9A791700E1C9AB;
+			remoteInfo = TaskListExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		76A135752B9A791900E1C9AB /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				76A135712B9A791900E1C9AB /* TaskListExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		762102E22B9910D40090982A /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
@@ -103,6 +133,16 @@
 		76896E702B973FC100FF101C /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
 		76896E722B97640300FF101C /* ShippingForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingForm.swift; sourceTree = "<group>"; };
 		76A135572B9A65B600E1C9AB /* TaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
+		76A1355D2B9A791700E1C9AB /* TaskListExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TaskListExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		76A1355F2B9A791800E1C9AB /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		76A135612B9A791800E1C9AB /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		76A135642B9A791800E1C9AB /* TaskListBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListBundle.swift; sourceTree = "<group>"; };
+		76A135662B9A791800E1C9AB /* TaskListLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListLiveActivity.swift; sourceTree = "<group>"; };
+		76A135682B9A791800E1C9AB /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
+		76A1356A2B9A791800E1C9AB /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		76A1356C2B9A791900E1C9AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		76A1356E2B9A791900E1C9AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76A135772B9A7D6700E1C9AB /* driverbuddy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = driverbuddy.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +168,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		76A1355A2B9A791700E1C9AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76A135622B9A791800E1C9AB /* SwiftUI.framework in Frameworks */,
+				76A135602B9A791800E1C9AB /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -137,6 +186,8 @@
 				76294B752B934F9E006476EC /* driverbuddy */,
 				76294B862B934FA0006476EC /* driverbuddyTests */,
 				76294B902B934FA0006476EC /* driverbuddyUITests */,
+				76A135632B9A791800E1C9AB /* TaskList */,
+				76A1355E2B9A791800E1C9AB /* Frameworks */,
 				76294B742B934F9E006476EC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -147,6 +198,7 @@
 				76294B732B934F9E006476EC /* driverbuddy.app */,
 				76294B832B934FA0006476EC /* driverbuddyTests.xctest */,
 				76294B8D2B934FA0006476EC /* driverbuddyUITests.xctest */,
+				76A1355D2B9A791700E1C9AB /* TaskListExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,6 +206,7 @@
 		76294B752B934F9E006476EC /* driverbuddy */ = {
 			isa = PBXGroup;
 			children = (
+				76A135772B9A7D6700E1C9AB /* driverbuddy.entitlements */,
 				76896E742B97BCDF00FF101C /* Tests */,
 				76896E672B95D2EF00FF101C /* Views */,
 				76896E602B952F4100FF101C /* Network */,
@@ -264,6 +317,28 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		76A1355E2B9A791800E1C9AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76A1355F2B9A791800E1C9AB /* WidgetKit.framework */,
+				76A135612B9A791800E1C9AB /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		76A135632B9A791800E1C9AB /* TaskList */ = {
+			isa = PBXGroup;
+			children = (
+				76A135642B9A791800E1C9AB /* TaskListBundle.swift */,
+				76A135662B9A791800E1C9AB /* TaskListLiveActivity.swift */,
+				76A135682B9A791800E1C9AB /* TaskList.swift */,
+				76A1356A2B9A791800E1C9AB /* AppIntent.swift */,
+				76A1356C2B9A791900E1C9AB /* Assets.xcassets */,
+				76A1356E2B9A791900E1C9AB /* Info.plist */,
+			);
+			path = TaskList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -274,10 +349,12 @@
 				76294B6F2B934F9E006476EC /* Sources */,
 				76294B702B934F9E006476EC /* Frameworks */,
 				76294B712B934F9E006476EC /* Resources */,
+				76A135752B9A791900E1C9AB /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				76A135702B9A791900E1C9AB /* PBXTargetDependency */,
 			);
 			name = driverbuddy;
 			packageProductDependencies = (
@@ -323,6 +400,23 @@
 			productReference = 76294B8D2B934FA0006476EC /* driverbuddyUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		76A1355C2B9A791700E1C9AB /* TaskListExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76A135722B9A791900E1C9AB /* Build configuration list for PBXNativeTarget "TaskListExtension" */;
+			buildPhases = (
+				76A135592B9A791700E1C9AB /* Sources */,
+				76A1355A2B9A791700E1C9AB /* Frameworks */,
+				76A1355B2B9A791700E1C9AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TaskListExtension;
+			productName = TaskListExtension;
+			productReference = 76A1355D2B9A791700E1C9AB /* TaskListExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -330,7 +424,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
+				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					76294B722B934F9E006476EC = {
@@ -343,6 +437,9 @@
 					76294B8C2B934FA0006476EC = {
 						CreatedOnToolsVersion = 15.2;
 						TestTargetID = 76294B722B934F9E006476EC;
+					};
+					76A1355C2B9A791700E1C9AB = {
+						CreatedOnToolsVersion = 15.3;
 					};
 				};
 			};
@@ -365,6 +462,7 @@
 				76294B722B934F9E006476EC /* driverbuddy */,
 				76294B822B934FA0006476EC /* driverbuddyTests */,
 				76294B8C2B934FA0006476EC /* driverbuddyUITests */,
+				76A1355C2B9A791700E1C9AB /* TaskListExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -390,6 +488,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76A1355B2B9A791700E1C9AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76A1356D2B9A791900E1C9AB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +557,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		76A135592B9A791700E1C9AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76A135692B9A791800E1C9AB /* TaskList.swift in Sources */,
+				76A1356B2B9A791800E1C9AB /* AppIntent.swift in Sources */,
+				76A135762B9A797200E1C9AB /* Task.swift in Sources */,
+				76A135652B9A791800E1C9AB /* TaskListBundle.swift in Sources */,
+				76A135672B9A791800E1C9AB /* TaskListLiveActivity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -463,6 +581,11 @@
 			isa = PBXTargetDependency;
 			target = 76294B722B934F9E006476EC /* driverbuddy */;
 			targetProxy = 76294B8E2B934FA0006476EC /* PBXContainerItemProxy */;
+		};
+		76A135702B9A791900E1C9AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 76A1355C2B9A791700E1C9AB /* TaskListExtension */;
+			targetProxy = 76A1356F2B9A791900E1C9AB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -589,8 +712,10 @@
 		76294B982B934FA0006476EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = driverbuddy/driverbuddy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"driverbuddy/Preview Content\"";
@@ -620,8 +745,10 @@
 		76294B992B934FA0006476EC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = driverbuddy/driverbuddy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"driverbuddy/Preview Content\"";
@@ -724,6 +851,62 @@
 			};
 			name = Release;
 		};
+		76A135732B9A791900E1C9AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PFVCA649R3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TaskList/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TaskList;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kashiash.driverbuddy.TaskList;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		76A135742B9A791900E1C9AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PFVCA649R3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TaskList/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TaskList;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kashiash.driverbuddy.TaskList;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -759,6 +942,15 @@
 			buildConfigurations = (
 				76294B9E2B934FA0006476EC /* Debug */,
 				76294B9F2B934FA0006476EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76A135722B9A791900E1C9AB /* Build configuration list for PBXNativeTarget "TaskListExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76A135732B9A791900E1C9AB /* Debug */,
+				76A135742B9A791900E1C9AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
