@@ -12,17 +12,27 @@ struct TaskListView: View {
     @Query(filter: #Predicate<Task> {!$0.isCompleted},
            sort: [SortDescriptor(\Task.lastUpdate, order: .reverse)]
            ,animation:.snappy) private var activeTasks: [Task]
+
+    @Environment(\.modelContext)  private var context
+    @State private var showAll = false
+
     var body: some View {
         List {
             Section(sctiveSectionTitle) {
-
+                ForEach(activeTasks) {
+                    TaskRowView(task: $0)
+                }
             }
 
-            CompletedTaskList()
+            CompletedTaskList(showAll: $showAll)
         }
         .toolbar {
             ToolbarItem(placement: .bottomBar) {
-                Button(action: {}) {
+                Button(action: {
+                    let task = Task(taskDescription: "", priority: .normal)
+                    context.insert(task)
+
+                }) {
                     Image(systemName: "plus.circle.fill")
                         .fontWeight(.light)
                         .font(.largeTitle)

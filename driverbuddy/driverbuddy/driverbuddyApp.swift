@@ -11,8 +11,11 @@ import SwiftUI
 struct driverbuddyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+          //  ContentView()
+            NavigationStack{
+                TaskListView()
+            }
         }
-        .modelContainer(for: [CarMake.self,CarModel.self,Vehicle.self])
+        .modelContainer(for: [CarMake.self,CarModel.self,Vehicle.self,Task.self])
     }
 }

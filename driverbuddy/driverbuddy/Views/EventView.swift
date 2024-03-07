@@ -10,7 +10,7 @@ import SwiftUI
 struct EventView: View {
     @State var description = "jakis fajny tekst"
 
-    @State var currentDate: Date = .now.addingTimeInterval(1000005 * 600)
+    @State var currentDate: Date = .now.addingTimeInterval(5 * 600)
 
     let calendar = Calendar.current
 

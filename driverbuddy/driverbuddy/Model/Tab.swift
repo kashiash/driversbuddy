@@ -46,9 +46,7 @@ enum Tab: String, CaseIterable {
         case .documents:
             CarMakeListView()
         case .tasks:
-            VStack{
-                Text("Some tasks")
-            }
+            TaskListView()
         case .expenses:
             VStack{
                 Text("Some expenses")

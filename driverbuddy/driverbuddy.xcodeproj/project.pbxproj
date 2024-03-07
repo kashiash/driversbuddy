@@ -43,6 +43,7 @@
 		76896E6F2B973EF000FF101C /* TextIconField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E6E2B973EF000FF101C /* TextIconField.swift */; };
 		76896E712B973FC100FF101C /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E702B973FC100FF101C /* TextInputField.swift */; };
 		76896E732B97640300FF101C /* ShippingForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E722B97640300FF101C /* ShippingForm.swift */; };
+		76A135582B9A65B600E1C9AB /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135572B9A65B600E1C9AB /* TaskRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		76896E6E2B973EF000FF101C /* TextIconField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextIconField.swift; sourceTree = "<group>"; };
 		76896E702B973FC100FF101C /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
 		76896E722B97640300FF101C /* ShippingForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingForm.swift; sourceTree = "<group>"; };
+		76A135572B9A65B600E1C9AB /* TaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 				76896E6E2B973EF000FF101C /* TextIconField.swift */,
 				76896E702B973FC100FF101C /* TextInputField.swift */,
 				762102E42B9917260090982A /* CompletedTaskList.swift */,
+				76A135572B9A65B600E1C9AB /* TaskRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				762102E32B9910D50090982A /* TaskListView.swift in Sources */,
 				76294BA12B93B9AB006476EC /* Tab.swift in Sources */,
 				76896E532B94F0FA00FF101C /* CarGeneration.swift in Sources */,
+				76A135582B9A65B600E1C9AB /* TaskRowView.swift in Sources */,
 				76294B792B934F9E006476EC /* ContentView.swift in Sources */,
 				76896E712B973FC100FF101C /* TextInputField.swift in Sources */,
 				76896E732B97640300FF101C /* ShippingForm.swift in Sources */,

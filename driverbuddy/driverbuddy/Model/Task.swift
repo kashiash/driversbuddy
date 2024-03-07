@@ -14,18 +14,18 @@ class Task {
   //  private(set) var taskId: String = UUID().uuidString
     var taskId: UUID = UUID()
     var taskDescription: String
-    var dueDate: Date
+    var dueDate: Date = Date.now.addingTimeInterval(5 * 600)
     var notes: String
     var isCompleted:Bool = false
     var priority: Priority = Priority.normal
     var lastUpdate: Date = Date.now
 
 
-    init(taskDescription: String, dueDate: Date, notes: String, isCompleted: Bool, priority: Priority) {
+    init(taskDescription: String,  priority: Priority) {
         self.taskDescription = taskDescription
-        self.dueDate = dueDate
-        self.notes = notes
-        self.isCompleted = isCompleted
+        self.dueDate = .now.addingTimeInterval(5 * 600)
+        self.notes = ""
+        self.isCompleted = false
         self.priority = priority
     }
 
