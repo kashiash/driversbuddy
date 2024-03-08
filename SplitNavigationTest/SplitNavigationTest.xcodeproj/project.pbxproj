@@ -15,6 +15,7 @@
 		76A135A02B9BA36900E1C9AB /* SplitNavigationTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A1359F2B9BA36900E1C9AB /* SplitNavigationTestUITests.swift */; };
 		76A135A22B9BA36900E1C9AB /* SplitNavigationTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135A12B9BA36900E1C9AB /* SplitNavigationTestUITestsLaunchTests.swift */; };
 		76A135AF2B9BA4C800E1C9AB /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135AE2B9BA4C800E1C9AB /* DataModel.swift */; };
+		76A135B12B9BB2DD00E1C9AB /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135B02B9BB2DD00E1C9AB /* Tab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		76A1359F2B9BA36900E1C9AB /* SplitNavigationTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitNavigationTestUITests.swift; sourceTree = "<group>"; };
 		76A135A12B9BA36900E1C9AB /* SplitNavigationTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitNavigationTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		76A135AE2B9BA4C800E1C9AB /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		76A135B02B9BB2DD00E1C9AB /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				76A135882B9BA36900E1C9AB /* Assets.xcassets */,
 				76A1358A2B9BA36900E1C9AB /* Preview Content */,
 				76A135AE2B9BA4C800E1C9AB /* DataModel.swift */,
+				76A135B02B9BB2DD00E1C9AB /* Tab.swift */,
 			);
 			path = SplitNavigationTest;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				76A135872B9BA36700E1C9AB /* ContentView.swift in Sources */,
 				76A135852B9BA36700E1C9AB /* SplitNavigationTestApp.swift in Sources */,
 				76A135AF2B9BA4C800E1C9AB /* DataModel.swift in Sources */,
+				76A135B12B9BB2DD00E1C9AB /* Tab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
