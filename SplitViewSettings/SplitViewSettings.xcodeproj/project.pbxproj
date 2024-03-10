@@ -1,0 +1,641 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		76A135BF2B9DE7EF00E1C9AB /* SplitViewSettingsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135BE2B9DE7EF00E1C9AB /* SplitViewSettingsApp.swift */; };
+		76A135C12B9DE7EF00E1C9AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135C02B9DE7EF00E1C9AB /* ContentView.swift */; };
+		76A135C32B9DE7F100E1C9AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A135C22B9DE7F100E1C9AB /* Assets.xcassets */; };
+		76A135C62B9DE7F100E1C9AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A135C52B9DE7F100E1C9AB /* Preview Assets.xcassets */; };
+		76A135D02B9DE7F100E1C9AB /* SplitViewSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135CF2B9DE7F100E1C9AB /* SplitViewSettingsTests.swift */; };
+		76A135DA2B9DE7F100E1C9AB /* SplitViewSettingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135D92B9DE7F100E1C9AB /* SplitViewSettingsUITests.swift */; };
+		76A135DC2B9DE7F100E1C9AB /* SplitViewSettingsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135DB2B9DE7F100E1C9AB /* SplitViewSettingsUITestsLaunchTests.swift */; };
+		76A135E92B9DE83B00E1C9AB /* UnitType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135E82B9DE83B00E1C9AB /* UnitType.swift */; };
+		76A135EB2B9DE86800E1C9AB /* SimpleSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135EA2B9DE86800E1C9AB /* SimpleSplitView.swift */; };
+		76A135ED2B9DE8A500E1C9AB /* SettingsSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135EC2B9DE8A500E1C9AB /* SettingsSidebarView.swift */; };
+		76A135EF2B9DE8EA00E1C9AB /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135EE2B9DE8EA00E1C9AB /* Mode.swift */; };
+		76A135F12B9DE92A00E1C9AB /* EventPreferencesSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135F02B9DE92A00E1C9AB /* EventPreferencesSettingsView.swift */; };
+		76A135F32B9DE9B600E1C9AB /* SettingsSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135F22B9DE9B600E1C9AB /* SettingsSplitView.swift */; };
+		76A135F52B9E1EE400E1C9AB /* SettingsFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135F42B9E1EE400E1C9AB /* SettingsFormView.swift */; };
+		76A135F92B9E203800E1C9AB /* SettingsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135F82B9E203800E1C9AB /* SettingsListView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		76A135CC2B9DE7F100E1C9AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76A135B32B9DE7EF00E1C9AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 76A135BA2B9DE7EF00E1C9AB;
+			remoteInfo = SplitViewSettings;
+		};
+		76A135D62B9DE7F100E1C9AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76A135B32B9DE7EF00E1C9AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 76A135BA2B9DE7EF00E1C9AB;
+			remoteInfo = SplitViewSettings;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		76A135BB2B9DE7EF00E1C9AB /* SplitViewSettings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitViewSettings.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		76A135BE2B9DE7EF00E1C9AB /* SplitViewSettingsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewSettingsApp.swift; sourceTree = "<group>"; };
+		76A135C02B9DE7EF00E1C9AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		76A135C22B9DE7F100E1C9AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		76A135C52B9DE7F100E1C9AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		76A135CB2B9DE7F100E1C9AB /* SplitViewSettingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplitViewSettingsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		76A135CF2B9DE7F100E1C9AB /* SplitViewSettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewSettingsTests.swift; sourceTree = "<group>"; };
+		76A135D52B9DE7F100E1C9AB /* SplitViewSettingsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplitViewSettingsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		76A135D92B9DE7F100E1C9AB /* SplitViewSettingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewSettingsUITests.swift; sourceTree = "<group>"; };
+		76A135DB2B9DE7F100E1C9AB /* SplitViewSettingsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewSettingsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		76A135E82B9DE83B00E1C9AB /* UnitType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitType.swift; sourceTree = "<group>"; };
+		76A135EA2B9DE86800E1C9AB /* SimpleSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSplitView.swift; sourceTree = "<group>"; };
+		76A135EC2B9DE8A500E1C9AB /* SettingsSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSidebarView.swift; sourceTree = "<group>"; };
+		76A135EE2B9DE8EA00E1C9AB /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
+		76A135F02B9DE92A00E1C9AB /* EventPreferencesSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPreferencesSettingsView.swift; sourceTree = "<group>"; };
+		76A135F22B9DE9B600E1C9AB /* SettingsSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSplitView.swift; sourceTree = "<group>"; };
+		76A135F42B9E1EE400E1C9AB /* SettingsFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFormView.swift; sourceTree = "<group>"; };
+		76A135F82B9E203800E1C9AB /* SettingsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		76A135B82B9DE7EF00E1C9AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76A135C82B9DE7F100E1C9AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76A135D22B9DE7F100E1C9AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		76A135B22B9DE7EF00E1C9AB = {
+			isa = PBXGroup;
+			children = (
+				76A135BD2B9DE7EF00E1C9AB /* SplitViewSettings */,
+				76A135CE2B9DE7F100E1C9AB /* SplitViewSettingsTests */,
+				76A135D82B9DE7F100E1C9AB /* SplitViewSettingsUITests */,
+				76A135BC2B9DE7EF00E1C9AB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		76A135BC2B9DE7EF00E1C9AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				76A135BB2B9DE7EF00E1C9AB /* SplitViewSettings.app */,
+				76A135CB2B9DE7F100E1C9AB /* SplitViewSettingsTests.xctest */,
+				76A135D52B9DE7F100E1C9AB /* SplitViewSettingsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		76A135BD2B9DE7EF00E1C9AB /* SplitViewSettings */ = {
+			isa = PBXGroup;
+			children = (
+				76A135F72B9E1F5A00E1C9AB /* Model */,
+				76A135F62B9E1F3900E1C9AB /* EarlyExamples */,
+				76A135BE2B9DE7EF00E1C9AB /* SplitViewSettingsApp.swift */,
+				76A135C02B9DE7EF00E1C9AB /* ContentView.swift */,
+				76A135C22B9DE7F100E1C9AB /* Assets.xcassets */,
+				76A135C42B9DE7F100E1C9AB /* Preview Content */,
+				76A135EC2B9DE8A500E1C9AB /* SettingsSidebarView.swift */,
+				76A135F02B9DE92A00E1C9AB /* EventPreferencesSettingsView.swift */,
+				76A135F22B9DE9B600E1C9AB /* SettingsSplitView.swift */,
+			);
+			path = SplitViewSettings;
+			sourceTree = "<group>";
+		};
+		76A135C42B9DE7F100E1C9AB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				76A135C52B9DE7F100E1C9AB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		76A135CE2B9DE7F100E1C9AB /* SplitViewSettingsTests */ = {
+			isa = PBXGroup;
+			children = (
+				76A135CF2B9DE7F100E1C9AB /* SplitViewSettingsTests.swift */,
+			);
+			path = SplitViewSettingsTests;
+			sourceTree = "<group>";
+		};
+		76A135D82B9DE7F100E1C9AB /* SplitViewSettingsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				76A135D92B9DE7F100E1C9AB /* SplitViewSettingsUITests.swift */,
+				76A135DB2B9DE7F100E1C9AB /* SplitViewSettingsUITestsLaunchTests.swift */,
+			);
+			path = SplitViewSettingsUITests;
+			sourceTree = "<group>";
+		};
+		76A135F62B9E1F3900E1C9AB /* EarlyExamples */ = {
+			isa = PBXGroup;
+			children = (
+				76A135F42B9E1EE400E1C9AB /* SettingsFormView.swift */,
+				76A135EA2B9DE86800E1C9AB /* SimpleSplitView.swift */,
+				76A135F82B9E203800E1C9AB /* SettingsListView.swift */,
+			);
+			path = EarlyExamples;
+			sourceTree = "<group>";
+		};
+		76A135F72B9E1F5A00E1C9AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76A135E82B9DE83B00E1C9AB /* UnitType.swift */,
+				76A135EE2B9DE8EA00E1C9AB /* Mode.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		76A135BA2B9DE7EF00E1C9AB /* SplitViewSettings */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76A135DF2B9DE7F100E1C9AB /* Build configuration list for PBXNativeTarget "SplitViewSettings" */;
+			buildPhases = (
+				76A135B72B9DE7EF00E1C9AB /* Sources */,
+				76A135B82B9DE7EF00E1C9AB /* Frameworks */,
+				76A135B92B9DE7EF00E1C9AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SplitViewSettings;
+			productName = SplitViewSettings;
+			productReference = 76A135BB2B9DE7EF00E1C9AB /* SplitViewSettings.app */;
+			productType = "com.apple.product-type.application";
+		};
+		76A135CA2B9DE7F100E1C9AB /* SplitViewSettingsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76A135E22B9DE7F100E1C9AB /* Build configuration list for PBXNativeTarget "SplitViewSettingsTests" */;
+			buildPhases = (
+				76A135C72B9DE7F100E1C9AB /* Sources */,
+				76A135C82B9DE7F100E1C9AB /* Frameworks */,
+				76A135C92B9DE7F100E1C9AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				76A135CD2B9DE7F100E1C9AB /* PBXTargetDependency */,
+			);
+			name = SplitViewSettingsTests;
+			productName = SplitViewSettingsTests;
+			productReference = 76A135CB2B9DE7F100E1C9AB /* SplitViewSettingsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		76A135D42B9DE7F100E1C9AB /* SplitViewSettingsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76A135E52B9DE7F100E1C9AB /* Build configuration list for PBXNativeTarget "SplitViewSettingsUITests" */;
+			buildPhases = (
+				76A135D12B9DE7F100E1C9AB /* Sources */,
+				76A135D22B9DE7F100E1C9AB /* Frameworks */,
+				76A135D32B9DE7F100E1C9AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				76A135D72B9DE7F100E1C9AB /* PBXTargetDependency */,
+			);
+			name = SplitViewSettingsUITests;
+			productName = SplitViewSettingsUITests;
+			productReference = 76A135D52B9DE7F100E1C9AB /* SplitViewSettingsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		76A135B32B9DE7EF00E1C9AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					76A135BA2B9DE7EF00E1C9AB = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					76A135CA2B9DE7F100E1C9AB = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 76A135BA2B9DE7EF00E1C9AB;
+					};
+					76A135D42B9DE7F100E1C9AB = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 76A135BA2B9DE7EF00E1C9AB;
+					};
+				};
+			};
+			buildConfigurationList = 76A135B62B9DE7EF00E1C9AB /* Build configuration list for PBXProject "SplitViewSettings" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 76A135B22B9DE7EF00E1C9AB;
+			productRefGroup = 76A135BC2B9DE7EF00E1C9AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				76A135BA2B9DE7EF00E1C9AB /* SplitViewSettings */,
+				76A135CA2B9DE7F100E1C9AB /* SplitViewSettingsTests */,
+				76A135D42B9DE7F100E1C9AB /* SplitViewSettingsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		76A135B92B9DE7EF00E1C9AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76A135C62B9DE7F100E1C9AB /* Preview Assets.xcassets in Resources */,
+				76A135C32B9DE7F100E1C9AB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76A135C92B9DE7F100E1C9AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76A135D32B9DE7F100E1C9AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		76A135B72B9DE7EF00E1C9AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76A135ED2B9DE8A500E1C9AB /* SettingsSidebarView.swift in Sources */,
+				76A135C12B9DE7EF00E1C9AB /* ContentView.swift in Sources */,
+				76A135F52B9E1EE400E1C9AB /* SettingsFormView.swift in Sources */,
+				76A135F32B9DE9B600E1C9AB /* SettingsSplitView.swift in Sources */,
+				76A135F92B9E203800E1C9AB /* SettingsListView.swift in Sources */,
+				76A135EF2B9DE8EA00E1C9AB /* Mode.swift in Sources */,
+				76A135E92B9DE83B00E1C9AB /* UnitType.swift in Sources */,
+				76A135F12B9DE92A00E1C9AB /* EventPreferencesSettingsView.swift in Sources */,
+				76A135EB2B9DE86800E1C9AB /* SimpleSplitView.swift in Sources */,
+				76A135BF2B9DE7EF00E1C9AB /* SplitViewSettingsApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76A135C72B9DE7F100E1C9AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76A135D02B9DE7F100E1C9AB /* SplitViewSettingsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76A135D12B9DE7F100E1C9AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76A135DA2B9DE7F100E1C9AB /* SplitViewSettingsUITests.swift in Sources */,
+				76A135DC2B9DE7F100E1C9AB /* SplitViewSettingsUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		76A135CD2B9DE7F100E1C9AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 76A135BA2B9DE7EF00E1C9AB /* SplitViewSettings */;
+			targetProxy = 76A135CC2B9DE7F100E1C9AB /* PBXContainerItemProxy */;
+		};
+		76A135D72B9DE7F100E1C9AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 76A135BA2B9DE7EF00E1C9AB /* SplitViewSettings */;
+			targetProxy = 76A135D62B9DE7F100E1C9AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		76A135DD2B9DE7F100E1C9AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		76A135DE2B9DE7F100E1C9AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		76A135E02B9DE7F100E1C9AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SplitViewSettings/Preview Content\"";
+				DEVELOPMENT_TEAM = PFVCA649R3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kashiash.SplitViewSettings;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		76A135E12B9DE7F100E1C9AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SplitViewSettings/Preview Content\"";
+				DEVELOPMENT_TEAM = PFVCA649R3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kashiash.SplitViewSettings;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		76A135E32B9DE7F100E1C9AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PFVCA649R3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kashiash.SplitViewSettingsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SplitViewSettings.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SplitViewSettings";
+			};
+			name = Debug;
+		};
+		76A135E42B9DE7F100E1C9AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PFVCA649R3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kashiash.SplitViewSettingsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SplitViewSettings.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SplitViewSettings";
+			};
+			name = Release;
+		};
+		76A135E62B9DE7F100E1C9AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PFVCA649R3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kashiash.SplitViewSettingsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SplitViewSettings;
+			};
+			name = Debug;
+		};
+		76A135E72B9DE7F100E1C9AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PFVCA649R3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kashiash.SplitViewSettingsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SplitViewSettings;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		76A135B62B9DE7EF00E1C9AB /* Build configuration list for PBXProject "SplitViewSettings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76A135DD2B9DE7F100E1C9AB /* Debug */,
+				76A135DE2B9DE7F100E1C9AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76A135DF2B9DE7F100E1C9AB /* Build configuration list for PBXNativeTarget "SplitViewSettings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76A135E02B9DE7F100E1C9AB /* Debug */,
+				76A135E12B9DE7F100E1C9AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76A135E22B9DE7F100E1C9AB /* Build configuration list for PBXNativeTarget "SplitViewSettingsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76A135E32B9DE7F100E1C9AB /* Debug */,
+				76A135E42B9DE7F100E1C9AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76A135E52B9DE7F100E1C9AB /* Build configuration list for PBXNativeTarget "SplitViewSettingsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76A135E62B9DE7F100E1C9AB /* Debug */,
+				76A135E72B9DE7F100E1C9AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 76A135B32B9DE7EF00E1C9AB /* Project object */;
+}
