@@ -10,6 +10,7 @@ import SwiftUI
 
 enum EventDetailTypes {
     case favoritesManagement
+    case secretData
 }
 
 struct EventPreferencesSettingsView: View {
@@ -50,14 +51,24 @@ struct EventPreferencesSettingsView: View {
             }
 
             Section(header: Text("Favorites")) {
-                NavigationLink(value: EventDetailTypes.favoritesManagement) {
-                    Text("Manage Favorites")
-                }
+
+                    NavigationLink(value: EventDetailTypes.favoritesManagement) {
+                        Text("Manage Favorites")
+                    }.padding(.vertical)
+
+                    NavigationLink(value: EventDetailTypes.secretData) {
+                        Text("Manage Secrets")
+                    } .padding(.vertical)
+
+
             }
+
             // If you want, you can keep .navigationDestination near the NavigationLink that sets the value
             .navigationDestination(for: EventDetailTypes.self) { eventDetailType in
                 switch eventDetailType {
                 case .favoritesManagement:
+                    EventFavoritesManagementView()
+                case .secretData:
                     EventFavoritesManagementView()
                 }
             }
@@ -106,5 +117,7 @@ struct EventFavoritesManagementView: View {
 
 
 #Preview {
-    EventPreferencesSettingsView()
+    NavigationStack{
+        EventPreferencesSettingsView()
+    }
 }

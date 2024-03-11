@@ -34,6 +34,12 @@ struct SettingsSidebarView: View {
                 NavigationLink(value: SettingsDetail.events) {
                     Text("Events")
                 }
+                NavigationLink(value: SettingsDetail.events) {
+                    Text("Makes")
+                }
+                NavigationLink(value: SettingsDetail.events) {
+                    Text("Models")
+                }
             }
 
             Section(header: Text("Modes")) {
@@ -53,5 +59,8 @@ struct SettingsSidebarView: View {
 
 #Preview {
     @State var selectedCategory: SettingsDetail?
-    return SettingsSidebarView(selectedDetail: $selectedCategory)
+    return 
+    (NavigationStack {
+        SettingsSidebarView(selectedDetail: $selectedCategory)
+    })
 }
