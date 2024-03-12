@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76524D0F2BA0871A0030A698 /* DrawingCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76524D0E2BA0871A0030A698 /* DrawingCanvas.swift */; };
 		76A135BF2B9DE7EF00E1C9AB /* SplitViewSettingsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135BE2B9DE7EF00E1C9AB /* SplitViewSettingsApp.swift */; };
 		76A135C12B9DE7EF00E1C9AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135C02B9DE7EF00E1C9AB /* ContentView.swift */; };
 		76A135C32B9DE7F100E1C9AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A135C22B9DE7F100E1C9AB /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		76524D0E2BA0871A0030A698 /* DrawingCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCanvas.swift; sourceTree = "<group>"; };
 		76A135BB2B9DE7EF00E1C9AB /* SplitViewSettings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitViewSettings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A135BE2B9DE7EF00E1C9AB /* SplitViewSettingsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewSettingsApp.swift; sourceTree = "<group>"; };
 		76A135C02B9DE7EF00E1C9AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		76524D0D2BA086F80030A698 /* DrawingCanvas */ = {
+			isa = PBXGroup;
+			children = (
+				76524D0E2BA0871A0030A698 /* DrawingCanvas.swift */,
+			);
+			path = DrawingCanvas;
+			sourceTree = "<group>";
+		};
 		76A135B22B9DE7EF00E1C9AB = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +120,7 @@
 		76A135BD2B9DE7EF00E1C9AB /* SplitViewSettings */ = {
 			isa = PBXGroup;
 			children = (
+				76524D0D2BA086F80030A698 /* DrawingCanvas */,
 				76A135F72B9E1F5A00E1C9AB /* Model */,
 				76A135F62B9E1F3900E1C9AB /* EarlyExamples */,
 				76A135BE2B9DE7EF00E1C9AB /* SplitViewSettingsApp.swift */,
@@ -297,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76524D0F2BA0871A0030A698 /* DrawingCanvas.swift in Sources */,
 				76A135ED2B9DE8A500E1C9AB /* SettingsSidebarView.swift in Sources */,
 				76A135C12B9DE7EF00E1C9AB /* ContentView.swift in Sources */,
 				76A135F52B9E1EE400E1C9AB /* SettingsFormView.swift in Sources */,
