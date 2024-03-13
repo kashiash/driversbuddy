@@ -38,27 +38,19 @@ class CanvasViewModel:NSObject, ObservableObject {
         stack.append(StackItem(view:AnyView(imageView)))
     }
 
-    func addSymbolToStack(systemName: String){
+    func addSymbolToStack(damage: CarDamage, location: CGPoint, canvasSize: CGSize){
         //MARK: creating SwiftUi Image View and append it to stack
-        let imageView = Image(systemName: systemName)
+        let imageView = Image(systemName: damage.symbol)
             .resizable()
             .foregroundColor(.red)
+            .fontWeight(.heavy)
             .aspectRatio(contentMode: .fit)
             .frame(width: 30, height: 30)
-
-        stack.append(StackItem(view:AnyView(imageView)))
+        let location =  CGSize(width: location.x - canvasSize.width/2 , height:   location.y - canvasSize.height/2)
+        stack.append(StackItem(view:AnyView(imageView), offset: location, lastOffset: location,damage: damage, dscription: damage.tooltip))
     }
 
-    func addInspectionImageToStack(){
-        //MARK: creating SwiftUi Image View and append it to stack
-        let imageView = Image("")
-            .resizable()
-            .foregroundColor(.red)
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 30, height: 30)
 
-        stack.append(StackItem(view:AnyView(imageView)))
-    }
 
     func saveCanvasImage<Content: View>(height:CGFloat, @ViewBuilder content: @escaping () -> Content){
         // removing safe area because it pushing view to bottom

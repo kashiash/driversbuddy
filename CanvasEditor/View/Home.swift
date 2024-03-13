@@ -36,15 +36,6 @@ struct Home: View {
                 }
                 .padding()
 
-                Button{
-                    if let damage = canvasNewModel.selectedDamage{
-                        canvasModel.addSymbolToStack(systemName: damage.symbol)
-                    }
-                } label: {
-                    Image(systemName: "photo.on.rectangle")
-
-                }
-                .padding()
 
                 Button{
                     canvasModel.showImagePicer.toggle()
@@ -68,9 +59,10 @@ struct Home: View {
 
                     }) {
                         HStack {
-                            Image(systemName: canvasNewModel.selectedDamage == damage ? damage.symbol : damage.symbolSelected) // Display the emoji icon
+                            Image(systemName:  damage.symbol) // Display the emoji icon
 
-                                .foregroundColor(canvasNewModel.selectedDamage == damage ? .blue : .red)
+                                .foregroundColor(canvasNewModel.selectedDamage == damage ? .red : .blue)
+                                .fontWeight(canvasNewModel.selectedDamage == damage ?  .heavy : .regular)
                         }
                     }
                     .font(.title)

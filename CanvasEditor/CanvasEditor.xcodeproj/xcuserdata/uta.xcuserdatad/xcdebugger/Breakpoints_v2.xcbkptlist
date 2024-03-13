@@ -16,7 +16,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
             endingLineNumber = "43"
-            landmarkName = "addSymbolToStack(systemName:)"
+            landmarkName = "addSymbolToStack(systemName:location:canvasSize:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -30,8 +30,8 @@
             filePath = "View/Canvas.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>

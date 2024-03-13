@@ -11,47 +11,39 @@ enum CarDamage: String, CaseIterable {
     case scratch = "Scratch"
     case dent = "Dent"
     case brokenMirror = "Broken Mirror"
+    case mechanical = "Mechanical issue"
     case flatTire = "Flat Tire"
     // Add other damage types you're interested in
 
     var tooltip: String {
         switch self {
             case .scratch:
-                return "Minor paint scratch"
+                return "Porysowane"
             case .dent:
-                return "Dent on the body"
+                return "Wgniecenie"
             case .brokenMirror:
-                return "Damaged side mirror"
+                return "Uszodznie na szybie"
+        case .mechanical:
+            return "Uszkodzenie mechaniczne"
             case .flatTire:
-                return "Punctured or deflated tire"
+                return "Uszkodzenie opony"
         }
     }
 
     var symbol: String {
         switch self {
             case .scratch:
-                return "hammer"
+                return "scribble"
             case .dent:
-                return "car"
+                return "hammer"
             case .brokenMirror:
                 return "magnifyingglass"
+        case .mechanical:
+            return "wrench.and.screwdriver"
             case .flatTire:
-                return "wrench.and.screwdriver"
-        }
-
-
-    }
-    var symbolSelected: String {
-        switch self {
-            case .scratch:
-                return "hammer.circle"
-            case .dent:
-                return "car.circle"
-            case .brokenMirror:
-                return "magnifyingglass.circle"
-            case .flatTire:
-                return "wrench.and.screwdriver"
+                return "exclamationmark.tirepressure"
         }
     }
+
 }
 

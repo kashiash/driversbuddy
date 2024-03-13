@@ -18,6 +18,8 @@ struct StackItem: Identifiable {
     var lastScale: CGFloat = 1
     var rotation: Angle = .zero
     var lastRotation: Angle = .zero
+    var damage: CarDamage = .scratch
+    var dscription: String = "Scratch"
 }
 
 

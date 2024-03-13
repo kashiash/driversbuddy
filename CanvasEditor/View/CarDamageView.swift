@@ -23,7 +23,7 @@ struct CarDamageView: View {
                     selectedDamage = damage
                 }) {
                     HStack {
-                        Image(systemName: selectedDamage == damage ? damage.symbol : damage.symbolSelected) // Display the emoji icon
+                        Image(systemName:  damage.symbol) // Display the emoji icon
                             .font(.title)
                             .foregroundColor(selectedDamage == damage ? .blue : .red)
                     }
