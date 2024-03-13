@@ -9,12 +9,15 @@ import SwiftUI
 
 struct Home: View {
     @StateObject var canvasModel: CanvasViewModel = .init()
-    
+    @State var canvasNewModel: CanvasObservableModel  = .init()
+
     var body: some View{
         ZStack(alignment: .topTrailing){
             //MARK: Canvas View
-            Canvas()
+            Canvas( canvasNewModel: $canvasNewModel)
                 .environmentObject(canvasModel)
+             //   .environment(canvasNewModel)
+
            // Color.black.ignoresSafeArea()
             //MARK: Canvas Actions
             HStack(spacing: 15){
@@ -34,53 +37,49 @@ struct Home: View {
                 .padding()
 
                 Button{
-                    canvasModel.showImagePicer.toggle()
-                } label: {
-                    Image(systemName: "photo.on.rectangle")
-
-                }
-                .padding()
-
-                Button{
-                    canvasModel.showImagePicer.toggle()
-                } label: {
-                    Image(systemName: "photo.on.rectangle")
-
-                }
-                .padding()
-                Spacer()
-                Button{
-                    canvasModel.saveCanvasImage(height: 250){
-                        Canvas().environmentObject(canvasModel)
+                    if let damage = canvasNewModel.selectedDamage{
+                        canvasModel.addSymbolToStack(systemName: damage.symbol)
                     }
                 } label: {
-                    Image(systemName: "square.and.arrow.up")
+                    Image(systemName: "photo.on.rectangle")
+
                 }
                 .padding()
+
+                Button{
+                    canvasModel.showImagePicer.toggle()
+                } label: {
+                    Image(systemName: "photo.on.rectangle")
+
+                }
+                .padding()
+
             }
           //  .foregroundColor(.white)
             .padding()
             .frame(maxHeight:.infinity,alignment: .top)
 
+
             VStack(spacing: 10) {
-                Button("😱"){
 
-                }.padding(.vertical)
-                Button("☠️"){
+                ForEach(CarDamage.allCases, id: \.self) { damage in
+                    Button(action: {
+                        canvasNewModel.selectedDamage = damage
 
-                }.padding(.vertical)
-                Button("👹"){
+                    }) {
+                        HStack {
+                            Image(systemName: canvasNewModel.selectedDamage == damage ? damage.symbol : damage.symbolSelected) // Display the emoji icon
 
-                }.padding(.vertical)
-                Button("💩"){
-
+                                .foregroundColor(canvasNewModel.selectedDamage == damage ? .blue : .red)
+                        }
+                    }
+                    .font(.title)
+                    .padding()
+                    //  .tooltip(damage.tooltip)
                 }
-                .padding(.vertical)
             }
-
-            .font(.title)
-            .foregroundColor(.red)
-            .offset(x: -10, y: 100)
+            
+            .offset(x: 0, y: 100)
 
         }
         .preferredColorScheme(.dark)

@@ -18,6 +18,7 @@
 		761085B829550A220093D592 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761085B729550A220093D592 /* ImagePicker.swift */; };
 		76524D112BA0F6810030A698 /* CarDamage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76524D102BA0F6810030A698 /* CarDamage.swift */; };
 		76524D132BA0F9C50030A698 /* CarDamageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76524D122BA0F9C50030A698 /* CarDamageView.swift */; };
+		76524D152BA183900030A698 /* CanvasObservableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76524D142BA183900030A698 /* CanvasObservableModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		761085B729550A220093D592 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		76524D102BA0F6810030A698 /* CarDamage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDamage.swift; sourceTree = "<group>"; };
 		76524D122BA0F9C50030A698 /* CarDamageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDamageView.swift; sourceTree = "<group>"; };
+		76524D142BA183900030A698 /* CanvasObservableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasObservableModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				761085B32954C7A10093D592 /* CanvasViewModel.swift */,
+				76524D142BA183900030A698 /* CanvasObservableModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				761085B02954C2050093D592 /* Home.swift in Sources */,
 				7610859E2954C1500093D592 /* CanvasEditorApp.swift in Sources */,
 				761085B22954C7880093D592 /* Canvas.swift in Sources */,
+				76524D152BA183900030A698 /* CanvasObservableModel.swift in Sources */,
 				76524D112BA0F6810030A698 /* CarDamage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,10 +336,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kashiash.CanvasEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -371,10 +375,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kashiash.CanvasEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";

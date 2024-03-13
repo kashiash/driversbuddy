@@ -32,10 +32,34 @@ class CanvasViewModel:NSObject, ObservableObject {
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 150, height: 150)
-        
+
+
+
         stack.append(StackItem(view:AnyView(imageView)))
     }
-    
+
+    func addSymbolToStack(systemName: String){
+        //MARK: creating SwiftUi Image View and append it to stack
+        let imageView = Image(systemName: systemName)
+            .resizable()
+            .foregroundColor(.red)
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 30, height: 30)
+
+        stack.append(StackItem(view:AnyView(imageView)))
+    }
+
+    func addInspectionImageToStack(){
+        //MARK: creating SwiftUi Image View and append it to stack
+        let imageView = Image("")
+            .resizable()
+            .foregroundColor(.red)
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 30, height: 30)
+
+        stack.append(StackItem(view:AnyView(imageView)))
+    }
+
     func saveCanvasImage<Content: View>(height:CGFloat, @ViewBuilder content: @escaping () -> Content){
         // removing safe area because it pushing view to bottom
         let uiView = UIHostingController(rootView: content().padding(.top,-safeArea().top))

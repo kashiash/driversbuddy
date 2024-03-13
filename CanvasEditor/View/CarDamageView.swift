@@ -26,9 +26,7 @@ struct CarDamageView: View {
                         Image(systemName: selectedDamage == damage ? damage.symbol : damage.symbolSelected) // Display the emoji icon
                             .font(.title)
                             .foregroundColor(selectedDamage == damage ? .blue : .red)
-
                     }
-
                 }
                 .padding()
               //  .tooltip(damage.tooltip)

@@ -50,7 +50,7 @@ enum CarDamage: String, CaseIterable {
             case .brokenMirror:
                 return "magnifyingglass.circle"
             case .flatTire:
-                return "wrench.and.screwdriver.circle"
+                return "wrench.and.screwdriver"
         }
     }
 }
