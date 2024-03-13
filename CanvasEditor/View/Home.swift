@@ -11,44 +11,77 @@ struct Home: View {
     @StateObject var canvasModel: CanvasViewModel = .init()
     
     var body: some View{
-        ZStack{
-            Color.black.ignoresSafeArea()
+        ZStack(alignment: .topTrailing){
             //MARK: Canvas View
             Canvas()
                 .environmentObject(canvasModel)
-            
+           // Color.black.ignoresSafeArea()
             //MARK: Canvas Actions
             HStack(spacing: 15){
                 Button{
-                    
+
                 } label: {
                     Image(systemName: "xmark")
-                        .font(.title3)
+
                 }
                 Spacer()
                 Button{
                     canvasModel.showImagePicer.toggle()
                 } label: {
+                    Image(systemName: "car")
+
+                }
+                .padding()
+
+                Button{
+                    canvasModel.showImagePicer.toggle()
+                } label: {
                     Image(systemName: "photo.on.rectangle")
-                        .font(.title3)
+
                 }
-            }
-            .foregroundColor(.white)
-            .padding()
-            .frame(maxHeight: .infinity,alignment: .top)
-            
-            //MARK: SAVE Button
-            Button{
-                canvasModel.saveCanvasImage(height: 250){
-                    Canvas().environmentObject(canvasModel)
+                .padding()
+
+                Button{
+                    canvasModel.showImagePicer.toggle()
+                } label: {
+                    Image(systemName: "photo.on.rectangle")
+
                 }
-            } label: {
-                Image(systemName: "arrow.right.circle.fill")
-                    .font(.largeTitle)
-                    .foregroundColor(.white)
+                .padding()
+                Spacer()
+                Button{
+                    canvasModel.saveCanvasImage(height: 250){
+                        Canvas().environmentObject(canvasModel)
+                    }
+                } label: {
+                    Image(systemName: "square.and.arrow.up")
+                }
+                .padding()
             }
+          //  .foregroundColor(.white)
             .padding()
-            .frame(maxWidth: .infinity, maxHeight: .infinity,alignment: .bottomTrailing)
+            .frame(maxHeight:.infinity,alignment: .top)
+
+            VStack(spacing: 10) {
+                Button("😱"){
+
+                }.padding(.vertical)
+                Button("☠️"){
+
+                }.padding(.vertical)
+                Button("👹"){
+
+                }.padding(.vertical)
+                Button("💩"){
+
+                }
+                .padding(.vertical)
+            }
+
+            .font(.title)
+            .foregroundColor(.red)
+            .offset(x: -10, y: 100)
+
         }
         .preferredColorScheme(.dark)
         .alert(canvasModel.errorMessage, isPresented: $canvasModel.showError){}

@@ -33,7 +33,7 @@ struct Canvas: View {
             .frame(width: size.width, height: size.height)
         }
         //MARK:Your desired height
-        .frame(height: height)
+        .frame(maxHeight:.infinity)
         .clipped()
         .alert("Are you sure to delete image?", isPresented: $canvasModel.showDeleteAlert) {
             Button(role: .destructive) {
