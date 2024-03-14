@@ -162,3 +162,13 @@ classDiagram
 
 
 ![image-20240302230036196](image-20240302230036196.png)
+
+
+
+
+
+Vehicle inspection screen:
+
+![image-20240314122519369](image-20240314122519369.png)
+
+![image-20240314122620711](image-20240314122620711.png)

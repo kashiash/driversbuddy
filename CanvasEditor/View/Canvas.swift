@@ -44,17 +44,14 @@ struct Canvas: View {
                     CanvasSubView(stackItem: $stackItem) {
                         stackItem.view
                     } moveFront: {
+                        canvasModel.currentlyTappedItem = stackItem
                         moveViewToFront(stackItem: stackItem)
                     } onDelete: {
                         //MARK: Ask if user doesnt make mistake tapped
                         canvasModel.currentlyTappedItem = stackItem
                         canvasModel.showDeleteAlert.toggle()
                     } onInsert: {
-                        if let damage = canvasNewModel.selectedDamage {
 
-                            //  canvasModel.addSymbolToStack(systemName: damage.symbol)
-
-                        }
                     }
                 }
             }
@@ -137,7 +134,8 @@ struct Canvas: View {
                     TapGesture(count: 2)
                         .onEnded({ _ in
                             print("DOUBLE TAP")
-                            onDelete()
+                            //onDelete()
+                            showEditAlert.toggle()
                         })
                         .simultaneously(with:
                                             LongPressGesture(minimumDuration: 0.3)
@@ -168,7 +166,7 @@ struct Canvas: View {
                         hapticScale = 1
                     }
                     moveFront()
-                    showEditAlert = true
+                    showEditAlert.toggle()
                 }
                 .gesture(
                     DragGesture()
@@ -208,6 +206,11 @@ struct Canvas: View {
                    
 
                         Button(role: .destructive) {
+                            onDelete()
+                        } label: {
+                            Text("Delete")
+                        }
+                        Button {
 
                         } label: {
                             Text("Save")
