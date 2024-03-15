@@ -171,4 +171,14 @@ Vehicle inspection screen:
 
 ![image-20240314122519369](image-20240314122519369.png)
 
-![image-20240314122620711](image-20240314122620711.png)
+
+
+
+
+Możliwość dodawania opisów uszkodzeń
+
+![](image-20240314122620711.png)
+
+oraz zdjęć tych uszkodzeń
+
+![image-20240315092045167](image-20240315092045167.png)

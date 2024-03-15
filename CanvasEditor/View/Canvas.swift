@@ -205,7 +205,7 @@ struct Canvas: View {
                 } content: {
                     VStack {
                         TextEditor(text: $stackItem.dscription)
-                        Image(systemName: "camera")
+                        Image("rysa1")
                             .resizable()
                             .scaledToFill()
                             .scaledToFit()
