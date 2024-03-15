@@ -104,6 +104,7 @@ struct Canvas: View {
         var content: Content
         @Binding var stackItem: StackItem
         @State var showEditAlert: Bool = false
+        @State var showEditSheet: Bool = false
 
         var moveFront: () -> ()
         var onDelete: () -> ()
@@ -150,7 +151,7 @@ struct Canvas: View {
                                     hapticScale = 1
                                 }
                                 moveFront()
-                                showEditAlert = true
+                                showEditSheet.toggle()
                             })
                                        )
                 )
@@ -166,7 +167,7 @@ struct Canvas: View {
                         hapticScale = 1
                     }
                     moveFront()
-                    showEditAlert.toggle()
+                    showEditSheet.toggle()
                 }
                 .gesture(
                     DragGesture()
@@ -179,26 +180,7 @@ struct Canvas: View {
 
                         })
                 )
-                .gesture(
-                    MagnificationGesture()
-                        .onChanged({value in
 
-                            //MARK: It start with Existing scaling = 1
-                            stackItem.scale = stackItem.lastScale + (value - 1)
-                        }).onEnded({ value in
-                            stackItem.lastScale = stackItem.scale
-                        })
-                    //MARK: Simultanously
-                        .simultaneously(with:
-                                            RotationGesture()
-                            .onChanged({ value in
-                                stackItem.rotation = stackItem.lastRotation + value
-                            }).onEnded({ value in
-                                stackItem.lastRotation = stackItem.rotation
-
-                            })
-                                       )
-                )
                 .alert("Add damage description?", isPresented: $showEditAlert) {
 
                     VStack {
@@ -217,6 +199,32 @@ struct Canvas: View {
                         }
                     }
                     .foregroundColor(.blue)
+                }
+                .sheet(isPresented: $showEditSheet) {
+
+                } content: {
+                    VStack {
+                        TextEditor(text: $stackItem.dscription)
+                        Image(systemName: "camera")
+                            .resizable()
+                            .scaledToFill()
+                            .scaledToFit()
+                            .font(.largeTitle)
+                        HStack{
+                            Spacer()
+                            Button(role: .destructive) {
+                                onDelete()
+                            } label: {
+                                Text("Delete")
+                            }
+                            Button {
+
+                            } label: {
+                                Text("Save")
+                            }
+                        }
+                    }
+
                 }
         }
 

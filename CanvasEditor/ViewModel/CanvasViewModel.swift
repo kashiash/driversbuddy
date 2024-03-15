@@ -46,7 +46,7 @@ class CanvasViewModel:NSObject, ObservableObject {
             .fontWeight(.heavy)
             .aspectRatio(contentMode: .fit)
             .frame(width: 30, height: 30)
-        let location =  CGSize(width: location.x - canvasSize.width/2 , height:   location.y - canvasSize.height/2)
+        let location =  CGSize(width: location.x - canvasSize.width/2 , height:   location.y - canvasSize.height/2 - 45)
         stack.append(StackItem(view:AnyView(imageView), offset: location, lastOffset: location,damage: damage, dscription: damage.tooltip))
     }
 

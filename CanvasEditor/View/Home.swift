@@ -19,38 +19,7 @@ struct Home: View {
             //MARK: Canvas View
             Canvas( canvasNewModel: $canvasNewModel)
                 .environmentObject(canvasModel)
-             //   .padding()
-             //   .environment(canvasNewModel)
 
-           // Color.black.ignoresSafeArea()
-            //MARK: Canvas Actions
-//            HStack(spacing: 15){
-//                Button{
-//
-//                } label: {
-//                    Image(systemName: "xmark")
-//
-//                }
-//                Spacer()
-//                Button{
-//                    canvasModel.showImagePicer.toggle()
-//                } label: {
-//                    Image(systemName: "car")
-//
-//                }
-//                .padding()
-//
-//
-//                Button{
-//                    canvasModel.showImagePicer.toggle()
-//                } label: {
-//                    Image(systemName: "photo.on.rectangle")
-//
-//                }
-//                .padding()
-//
-//            }
-          //  .foregroundColor(.white)
             .padding()
             .frame(maxHeight:.infinity,alignment: .top)
 
@@ -65,6 +34,8 @@ struct Home: View {
                                 }
                                 .font(.title)
                                 .padding()
+                                .padding(.vertical)
+                                .padding(.vertical)
 
                 ForEach(CarDamage.allCases, id: \.self) { damage in
                     Button(action: {
@@ -82,6 +53,17 @@ struct Home: View {
                     .padding()
                     //  .tooltip(damage.tooltip)
                 }
+
+                Button{
+                    canvasModel.showImagePicer.toggle()
+                } label: {
+                    Image(systemName: "camera")
+
+                }
+                .font(.title)
+                .padding()
+                .padding(.vertical)
+                .padding(.vertical)
             }
             
             .offset(x: 0, y: 50)

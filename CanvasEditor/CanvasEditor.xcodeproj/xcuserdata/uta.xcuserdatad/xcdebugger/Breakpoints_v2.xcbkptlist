@@ -16,7 +16,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
             endingLineNumber = "43"
-            landmarkName = "addSymbolToStack(systemName:location:canvasSize:)"
+            landmarkName = "addSymbolToStack(damage:location:canvasSize:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
