@@ -173,8 +173,6 @@ Vehicle inspection screen:
 
 
 
-
-
 Możliwość dodawania opisów uszkodzeń
 
 
