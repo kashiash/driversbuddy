@@ -204,7 +204,8 @@ struct Canvas: View {
 
                 } content: {
                     VStack {
-                        TextEditor(text: $stackItem.dscription)
+                        TextField(stackItem.damage.rawValue,text: $stackItem.dscription, axis: .vertical)
+                       // TextEditor(text: $stackItem.dscription)
                         Image("rysa1")
                             .resizable()
                             .scaledToFill()

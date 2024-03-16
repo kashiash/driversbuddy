@@ -64,10 +64,12 @@ enum Status: String ,Codable,CaseIterable {
     case strage = "In Storage"
 }
 
-enum Units: String, Codable, CaseIterable {
+enum Units: String, Codable, CaseIterable, Identifiable {
     case km = "Kilometers"
     case miles = "Miles"
     case imperial = "Miles (Imperial)"
+
+    var id: String { self.rawValue }
 }
 
 enum VehicleType: String, Codable, CaseIterable {

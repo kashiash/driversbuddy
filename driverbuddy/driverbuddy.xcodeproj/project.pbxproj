@@ -18,6 +18,8 @@
 		76294B942B934FA0006476EC /* driverbuddyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76294B932B934FA0006476EC /* driverbuddyUITestsLaunchTests.swift */; };
 		76294BA12B93B9AB006476EC /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76294BA02B93B9AB006476EC /* Tab.swift */; };
 		76294BA52B93C2B9006476EC /* BottomHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76294BA42B93C2B9006476EC /* BottomHelper.swift */; };
+		76524D172BA593DF0030A698 /* SplitNavContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76524D162BA593DF0030A698 /* SplitNavContentView.swift */; };
+		76524D192BA594FD0030A698 /* ApplicationSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76524D182BA594FD0030A698 /* ApplicationSidebarView.swift */; };
 		76896E3F2B94B7D000FF101C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E3E2B94B7D000FF101C /* Task.swift */; };
 		76896E412B94C7B700FF101C /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E402B94C7B700FF101C /* Vehicle.swift */; };
 		76896E432B94DA5200FF101C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E422B94DA5200FF101C /* Event.swift */; };
@@ -108,6 +110,8 @@
 		76294B932B934FA0006476EC /* driverbuddyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = driverbuddyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		76294BA02B93B9AB006476EC /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		76294BA42B93C2B9006476EC /* BottomHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomHelper.swift; sourceTree = "<group>"; };
+		76524D162BA593DF0030A698 /* SplitNavContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitNavContentView.swift; sourceTree = "<group>"; };
+		76524D182BA594FD0030A698 /* ApplicationSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSidebarView.swift; sourceTree = "<group>"; };
 		76896E3E2B94B7D000FF101C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		76896E402B94C7B700FF101C /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		76896E422B94DA5200FF101C /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -214,7 +218,6 @@
 				76294BA32B93BAE5006476EC /* Helpers */,
 				76294BA22B93BADB006476EC /* Model */,
 				76294B762B934F9E006476EC /* driverbuddyApp.swift */,
-				76294B782B934F9E006476EC /* ContentView.swift */,
 				76294B7A2B934FA0006476EC /* Assets.xcassets */,
 				76294B7C2B934FA0006476EC /* Preview Content */,
 			);
@@ -300,11 +303,14 @@
 			isa = PBXGroup;
 			children = (
 				76896E682B95D31100FF101C /* VehicleCellView.swift */,
+				76294B782B934F9E006476EC /* ContentView.swift */,
 				76896E6C2B96065100FF101C /* EventView.swift */,
 				76896E6E2B973EF000FF101C /* TextIconField.swift */,
 				76896E702B973FC100FF101C /* TextInputField.swift */,
 				762102E42B9917260090982A /* CompletedTaskList.swift */,
 				76A135572B9A65B600E1C9AB /* TaskRowView.swift */,
+				76524D162BA593DF0030A698 /* SplitNavContentView.swift */,
+				76524D182BA594FD0030A698 /* ApplicationSidebarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -506,6 +512,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76524D192BA594FD0030A698 /* ApplicationSidebarView.swift in Sources */,
 				76896E472B94DC7100FF101C /* FuelUp.swift in Sources */,
 				76896E452B94DB9F00FF101C /* Odometer.swift in Sources */,
 				76896E5D2B952B6900FF101C /* CarMakeListView.swift in Sources */,
@@ -522,6 +529,7 @@
 				76896E732B97640300FF101C /* ShippingForm.swift in Sources */,
 				76896E3F2B94B7D000FF101C /* Task.swift in Sources */,
 				762102E52B9917260090982A /* CompletedTaskList.swift in Sources */,
+				76524D172BA593DF0030A698 /* SplitNavContentView.swift in Sources */,
 				76896E692B95D31100FF101C /* VehicleCellView.swift in Sources */,
 				76896E4B2B94DE0000FF101C /* Item.swift in Sources */,
 				76896E622B952F6A00FF101C /* WebService.swift in Sources */,
