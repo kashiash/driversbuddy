@@ -177,12 +177,7 @@ Vehicle inspection screen:
 
 Możliwość dodawania opisów uszkodzeń
 
-**Rysy** na karoserii pojazdu to jak tajemnice wypisane na pergaminie metalu. Każda z nich ma swoją historię, jak wiersz napisany przez wiatr i piasek. Oto opowieść o tych drobnych bliznach:
 
-1. **Rysa Świtu**: Na masce, tuż przy logo, widnieje cienka rysa. To jak pierwszy promień słońca, który przecina noc. Ktoś, może zakochany, może zbyt pochopny, zostawił tu ślad swojego przejścia.
-2. **Rysa Wiatru**: Na dachu, tam gdzie powietrze tańczy z prędkością, jest rysa. To jak nuta na partyturze, zapisana przez wiatr. Może to moment, gdy samochód przemierzał bezdroża, a wiatr śpiewał mu piosenkę o wolności.
-3. **Rysa Deszczu**: Na błotniku, blisko kół, widnieje rysa. To jak łza spadająca z nieba, kiedy deszcz płakał nad miastem. Może to chwila, gdy auto przemierzało mokre ulice, a deszcz tulił je do snu.
-4. **Rysa Nocy**: Na drzwiach, przy klamce, jest rysa. To jak cień, który przeszedł przez noc. Może to moment, gdy samochód stał pod gwiazdami, a noc była jego jedynym towarzyszem.
 
 ![](image-20240314122620711.png)
 
