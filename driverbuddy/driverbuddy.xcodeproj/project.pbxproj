@@ -20,6 +20,7 @@
 		76294BA52B93C2B9006476EC /* BottomHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76294BA42B93C2B9006476EC /* BottomHelper.swift */; };
 		76524D172BA593DF0030A698 /* SplitNavContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76524D162BA593DF0030A698 /* SplitNavContentView.swift */; };
 		76524D192BA594FD0030A698 /* ApplicationSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76524D182BA594FD0030A698 /* ApplicationSidebarView.swift */; };
+		76524D1B2BA75FFA0030A698 /* ApllicationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76524D1A2BA75FFA0030A698 /* ApllicationDetailsView.swift */; };
 		76896E3F2B94B7D000FF101C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E3E2B94B7D000FF101C /* Task.swift */; };
 		76896E412B94C7B700FF101C /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E402B94C7B700FF101C /* Vehicle.swift */; };
 		76896E432B94DA5200FF101C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E422B94DA5200FF101C /* Event.swift */; };
@@ -112,6 +113,7 @@
 		76294BA42B93C2B9006476EC /* BottomHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomHelper.swift; sourceTree = "<group>"; };
 		76524D162BA593DF0030A698 /* SplitNavContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitNavContentView.swift; sourceTree = "<group>"; };
 		76524D182BA594FD0030A698 /* ApplicationSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSidebarView.swift; sourceTree = "<group>"; };
+		76524D1A2BA75FFA0030A698 /* ApllicationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApllicationDetailsView.swift; sourceTree = "<group>"; };
 		76896E3E2B94B7D000FF101C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		76896E402B94C7B700FF101C /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		76896E422B94DA5200FF101C /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				76A135572B9A65B600E1C9AB /* TaskRowView.swift */,
 				76524D162BA593DF0030A698 /* SplitNavContentView.swift */,
 				76524D182BA594FD0030A698 /* ApplicationSidebarView.swift */,
+				76524D1A2BA75FFA0030A698 /* ApllicationDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				76A135582B9A65B600E1C9AB /* TaskRowView.swift in Sources */,
 				76294B792B934F9E006476EC /* ContentView.swift in Sources */,
 				76896E712B973FC100FF101C /* TextInputField.swift in Sources */,
+				76524D1B2BA75FFA0030A698 /* ApllicationDetailsView.swift in Sources */,
 				76896E732B97640300FF101C /* ShippingForm.swift in Sources */,
 				76896E3F2B94B7D000FF101C /* Task.swift in Sources */,
 				762102E52B9917260090982A /* CompletedTaskList.swift in Sources */,

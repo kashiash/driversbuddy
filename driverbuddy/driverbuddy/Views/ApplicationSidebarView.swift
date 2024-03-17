@@ -16,6 +16,15 @@ struct ApplicationSidebarView: View {
 
     var body: some View {
         List(selection: $selectedDetail) {
+
+            Section(header: Text("Tabs")) {
+                ForEach(Tab.allCases) { tab in
+                    NavigationLink(value: SettingsDetail.tab(tab)) {
+                        Text(tab.rawValue)
+                    }
+                }
+            }
+
             Section {
                 Picker("Units", selection: $selectedUnit) {
                    ForEach(Units.allCases) { unit in
@@ -25,15 +34,7 @@ struct ApplicationSidebarView: View {
                 Toggle(isOn: $notification) {
                     Text("Notification")
                 }
-                NavigationLink(value: SettingsDetail.events) {
-                    Text("Events")
-                }
-                NavigationLink(value: SettingsDetail.events) {
-                    Text("Makes")
-                }
-                NavigationLink(value: SettingsDetail.events) {
-                    Text("Models")
-                }
+
             }
 
             Section(header: Text("Modes")) {

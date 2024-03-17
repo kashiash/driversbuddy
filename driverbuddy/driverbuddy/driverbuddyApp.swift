@@ -12,9 +12,10 @@ struct driverbuddyApp: App {
     var body: some Scene {
         WindowGroup {
           //  ContentView()
-            NavigationStack{
-                TaskListView()
-            }
+             SplitNavContentView()
+//            NavigationStack{
+//                TaskListView()
+//            }
         }
         .modelContainer(for: [CarMake.self,CarModel.self,Vehicle.self,Task.self])
     }

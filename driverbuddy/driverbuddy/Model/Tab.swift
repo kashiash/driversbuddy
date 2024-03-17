@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum Tab: String, CaseIterable {
+enum Tab: String, CaseIterable, Identifiable {
     case stations = "Stations"
     case cars = "Cars"
     case documents = "Documents"
@@ -30,6 +30,10 @@ enum Tab: String, CaseIterable {
         case .config:
             "gearshape"
         }
+    }
+
+    var id: String {
+        self.rawValue
     }
 
     @ViewBuilder
