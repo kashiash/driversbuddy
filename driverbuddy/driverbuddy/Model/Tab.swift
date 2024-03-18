@@ -11,6 +11,7 @@ import SwiftUI
 enum Tab: String, CaseIterable, Identifiable {
     case stations = "Stations"
     case cars = "Cars"
+    case makes = "Makes"
     case documents = "Documents"
     case tasks = "Tasks"
     case expenses = "Expenses"
@@ -21,6 +22,8 @@ enum Tab: String, CaseIterable, Identifiable {
         case .stations: "fuelpump"
         case .cars:
             "car"
+        case .makes:
+            "car.rear"
         case .documents:
             "doc"
         case .tasks:
@@ -47,8 +50,12 @@ enum Tab: String, CaseIterable, Identifiable {
             }
         case .cars:
             VehicleListView()
-        case .documents:
+
+        case .makes:
             CarMakeListView()
+
+        case .documents:
+            CarModelListView()
         case .tasks:
             TaskListView()
         case .expenses:
