@@ -24,6 +24,8 @@ struct CarModelListView: View {
                     }
                 }
             }
+            .navigationBarTitle("Vehicles")
+            .navigationBarTitleDisplayMode(.inline)
         }
         .task {
             if carModel.isEmpty {

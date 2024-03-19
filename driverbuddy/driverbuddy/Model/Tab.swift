@@ -13,6 +13,7 @@ enum Tab: String, CaseIterable, Identifiable {
     case cars = "Cars"
     case makes = "Makes"
     case documents = "Documents"
+    case fastTasks = "Fast Tasks"
     case tasks = "Tasks"
     case expenses = "Expenses"
     case config = "Settings"
@@ -26,6 +27,8 @@ enum Tab: String, CaseIterable, Identifiable {
             "car.rear"
         case .documents:
             "doc"
+        case .fastTasks:
+            "calendar.badge.plus"
         case .tasks:
             "calendar"
         case .expenses:
@@ -41,8 +44,6 @@ enum Tab: String, CaseIterable, Identifiable {
 
     @ViewBuilder
     var tabContent: some View {
-        Text("Tab Content")
-        Image(systemName: symbol)
         switch self {
         case .stations: 
             VStack{
@@ -56,6 +57,8 @@ enum Tab: String, CaseIterable, Identifiable {
 
         case .documents:
             CarModelListView()
+        case .fastTasks:
+            TaskListView()
         case .tasks:
             TaskListView()
         case .expenses:

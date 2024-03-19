@@ -21,6 +21,8 @@ struct CarMakeListView: View {
                     Text(make.name)
                 }
             }
+            .navigationBarTitle("Car makes")
+            .navigationBarTitleDisplayMode(.inline)
         }
         .task {
             if carMakes.isEmpty {

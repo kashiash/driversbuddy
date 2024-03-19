@@ -26,6 +26,8 @@ struct TaskListView: View {
 
             CompletedTaskList(showAll: $showAll)
         }
+        .navigationBarTitle("Tasks")
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .bottomBar) {
                 Button(action: {

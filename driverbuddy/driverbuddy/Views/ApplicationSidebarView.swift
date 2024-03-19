@@ -20,7 +20,18 @@ struct ApplicationSidebarView: View {
             Section(header: Text("Tabs")) {
                 ForEach(Tab.allCases) { tab in
                     NavigationLink(value: SettingsDetail.tab(tab)) {
-                        Text(tab.rawValue)
+                        HStack {
+                            Image(systemName: tab.symbol)
+                            Text(tab.rawValue)
+                        }
+                    }
+                }
+            }
+
+            Section(header: Text("fast actions")) {
+                ForEach(Mode.allCases) { mode in
+                    NavigationLink(value: SettingsDetail.mode(mode)) {
+                        Text(mode.localized)
                     }
                 }
             }
@@ -34,17 +45,16 @@ struct ApplicationSidebarView: View {
                 Toggle(isOn: $notification) {
                     Text("Notification")
                 }
+                Button {
 
-            }
-
-            Section(header: Text("Modes")) {
-                ForEach(Mode.allCases) { mode in
-                    NavigationLink(value: SettingsDetail.mode(mode)) {
-                        Text(mode.localized)
+                } label : {
+                    HStack {
+                        Text("Settings")
+                        Image(systemName:  "gearshape")
                     }
                 }
-            }
 
+            }
         }
         .listStyle(.grouped)
     }
