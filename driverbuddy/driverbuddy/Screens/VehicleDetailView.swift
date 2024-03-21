@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct VehicleDetailView: View {
-    let vehicle: Vehicle
+    @State var  vehicle: Vehicle
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
 
