@@ -18,6 +18,7 @@
 		76294B942B934FA0006476EC /* driverbuddyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76294B932B934FA0006476EC /* driverbuddyUITestsLaunchTests.swift */; };
 		76294BA12B93B9AB006476EC /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76294BA02B93B9AB006476EC /* Tab.swift */; };
 		76294BA52B93C2B9006476EC /* BottomHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76294BA42B93C2B9006476EC /* BottomHelper.swift */; };
+		764BEFEC2BACA471005522FD /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764BEFEB2BACA471005522FD /* TaskDetailView.swift */; };
 		76524D172BA593DF0030A698 /* SplitNavContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76524D162BA593DF0030A698 /* SplitNavContentView.swift */; };
 		76524D192BA594FD0030A698 /* ApplicationSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76524D182BA594FD0030A698 /* ApplicationSidebarView.swift */; };
 		76524D1B2BA75FFA0030A698 /* ApllicationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76524D1A2BA75FFA0030A698 /* ApllicationDetailsView.swift */; };
@@ -111,6 +112,7 @@
 		76294B932B934FA0006476EC /* driverbuddyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = driverbuddyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		76294BA02B93B9AB006476EC /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		76294BA42B93C2B9006476EC /* BottomHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomHelper.swift; sourceTree = "<group>"; };
+		764BEFEB2BACA471005522FD /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
 		76524D162BA593DF0030A698 /* SplitNavContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitNavContentView.swift; sourceTree = "<group>"; };
 		76524D182BA594FD0030A698 /* ApplicationSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSidebarView.swift; sourceTree = "<group>"; };
 		76524D1A2BA75FFA0030A698 /* ApllicationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApllicationDetailsView.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				76896E702B973FC100FF101C /* TextInputField.swift */,
 				762102E42B9917260090982A /* CompletedTaskList.swift */,
 				76A135572B9A65B600E1C9AB /* TaskRowView.swift */,
+				764BEFEB2BACA471005522FD /* TaskDetailView.swift */,
 				76524D162BA593DF0030A698 /* SplitNavContentView.swift */,
 				76524D182BA594FD0030A698 /* ApplicationSidebarView.swift */,
 				76524D1A2BA75FFA0030A698 /* ApllicationDetailsView.swift */,
@@ -547,6 +550,7 @@
 				76896E662B95BF4400FF101C /* VehicleListView.swift in Sources */,
 				76896E4F2B94F0D200FF101C /* CarModel.swift in Sources */,
 				76896E432B94DA5200FF101C /* Event.swift in Sources */,
+				764BEFEC2BACA471005522FD /* TaskDetailView.swift in Sources */,
 				76294B772B934F9E006476EC /* driverbuddyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

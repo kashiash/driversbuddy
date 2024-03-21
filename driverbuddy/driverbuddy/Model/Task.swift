@@ -19,6 +19,8 @@ class Task {
     var isCompleted:Bool = false
     var priority: Priority = Priority.normal
     var lastUpdate: Date = Date.now
+    var reminderTime: Date = Date.now
+    var reminderEnabled: Bool = false
 
 
     init(taskDescription: String,  priority: Priority) {
