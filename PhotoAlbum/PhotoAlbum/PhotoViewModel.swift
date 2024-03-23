@@ -37,5 +37,6 @@ class PhotoViewModel {
 
     var isUpdating: Bool { photo != nil }
     var isDisabled: Bool { name.isEmpty }
+    
 
 }

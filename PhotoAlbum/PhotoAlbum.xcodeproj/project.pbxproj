@@ -18,6 +18,7 @@
 		76F6676C2BAEDE4E00DB4E67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6676B2BAEDE4E00DB4E67 /* Constants.swift */; };
 		76F6676E2BAF865B00DB4E67 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6676D2BAF865B00DB4E67 /* PhotoView.swift */; };
 		76F667702BAF8FA100DB4E67 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6676F2BAF8FA100DB4E67 /* PhotoViewModel.swift */; };
+		76F667722BAF99F200DB4E67 /* PhotoEditForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F667712BAF99F200DB4E67 /* PhotoEditForm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		76F6676B2BAEDE4E00DB4E67 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		76F6676D2BAF865B00DB4E67 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		76F6676F2BAF8FA100DB4E67 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
+		76F667712BAF99F200DB4E67 /* PhotoEditForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				76F6676B2BAEDE4E00DB4E67 /* Constants.swift */,
 				76F6676D2BAF865B00DB4E67 /* PhotoView.swift */,
 				76F6676F2BAF8FA100DB4E67 /* PhotoViewModel.swift */,
+				76F667712BAF99F200DB4E67 /* PhotoEditForm.swift */,
 			);
 			path = PhotoAlbum;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				76F667702BAF8FA100DB4E67 /* PhotoViewModel.swift in Sources */,
 				76F667422BADC73100DB4E67 /* PhotosListView.swift in Sources */,
 				76F667402BADC73100DB4E67 /* PhotoAlbumApp.swift in Sources */,
+				76F667722BAF99F200DB4E67 /* PhotoEditForm.swift in Sources */,
 				76F6676E2BAF865B00DB4E67 /* PhotoView.swift in Sources */,
 				76F6676C2BAEDE4E00DB4E67 /* Constants.swift in Sources */,
 			);
