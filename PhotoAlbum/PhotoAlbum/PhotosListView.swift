@@ -18,23 +18,24 @@ struct PhotosListView: View {
                 if samples.isEmpty {
                     ContentUnavailableView("Add photo", systemImage: "photo")
                 } else {
-                    List(samples) { sample in
-                        NavigationLink(value: sample) {
+                    List(samples) { photo in
+                        NavigationLink(value: photo) {
                             HStack{
-                                Image(uiImage: sample.image == nil ? Constants.placeholder : sample.image!)
+                                Image(uiImage: photo.image == nil ? Constants.placeholder : photo.image!)
                                    .resizable()
                                    .scaledToFill()
                                    .frame(width: 50, height: 50)
-                                   .cornerRadius(12)
+                                 //  .cornerRadius(12)
+                                   .clipShape(RoundedRectangle(cornerRadius: 12))
                                    .clipped()
                                    .padding(.trailing)
-                                Text(sample.name)
+                                Text(photo.name)
                                     .font(.title)
                             }
                         }
                         .swipeActions{
                             Button(role: .destructive) {
-                                modelContext.delete(sample)
+                                modelContext.delete(photo)
                                 try? modelContext.save()
                             } label: {
                                 Image(systemName: "trash")
@@ -44,8 +45,8 @@ struct PhotosListView: View {
                     .listStyle(.plain)
                 }
             }
-            .navigationDestination(for: PhotoModel.self) { sample in
-                Text(sample.name)
+            .navigationDestination(for: PhotoModel.self) { photo in
+                PhotoView(photo: photo)
             }
             .navigationTitle("Picker or camera")
             .toolbar {
