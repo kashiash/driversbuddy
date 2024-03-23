@@ -8,5 +8,5 @@
 import UIKit
 
 enum Constants {
-    static let placeholder = UIImage(systemName: "photo.fill")
+    static let placeholder = UIImage(systemName: "photo.fill")!
 }

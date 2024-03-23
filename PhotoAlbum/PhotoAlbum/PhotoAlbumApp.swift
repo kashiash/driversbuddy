@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct PhotoAlbumApp: App {
@@ -13,5 +14,6 @@ struct PhotoAlbumApp: App {
         WindowGroup {
             PhotosListView()
         }
+        .modelContainer(for: PhotoModel.self)
     }
 }
