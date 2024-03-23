@@ -17,6 +17,7 @@
 		76F6676A2BADC7DB00DB4E67 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F667692BADC7DB00DB4E67 /* PhotoModel.swift */; };
 		76F6676C2BAEDE4E00DB4E67 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6676B2BAEDE4E00DB4E67 /* Constants.swift */; };
 		76F6676E2BAF865B00DB4E67 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6676D2BAF865B00DB4E67 /* PhotoView.swift */; };
+		76F667702BAF8FA100DB4E67 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6676F2BAF8FA100DB4E67 /* PhotoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		76F667692BADC7DB00DB4E67 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		76F6676B2BAEDE4E00DB4E67 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		76F6676D2BAF865B00DB4E67 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		76F6676F2BAF8FA100DB4E67 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				76F667692BADC7DB00DB4E67 /* PhotoModel.swift */,
 				76F6676B2BAEDE4E00DB4E67 /* Constants.swift */,
 				76F6676D2BAF865B00DB4E67 /* PhotoView.swift */,
+				76F6676F2BAF8FA100DB4E67 /* PhotoViewModel.swift */,
 			);
 			path = PhotoAlbum;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76F6676A2BADC7DB00DB4E67 /* PhotoModel.swift in Sources */,
+				76F667702BAF8FA100DB4E67 /* PhotoViewModel.swift in Sources */,
 				76F667422BADC73100DB4E67 /* PhotosListView.swift in Sources */,
 				76F667402BADC73100DB4E67 /* PhotoAlbumApp.swift in Sources */,
 				76F6676E2BAF865B00DB4E67 /* PhotoView.swift in Sources */,
