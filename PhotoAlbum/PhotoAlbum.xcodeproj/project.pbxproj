@@ -21,6 +21,8 @@
 		76F667722BAF99F200DB4E67 /* PhotoEditForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F667712BAF99F200DB4E67 /* PhotoEditForm.swift */; };
 		76F667742BB059E200DB4E67 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F667732BB059E200DB4E67 /* ImagePicker.swift */; };
 		76F667762BB0973F00DB4E67 /* ModelFormType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F667752BB0973F00DB4E67 /* ModelFormType.swift */; };
+		76F667782BB0C18800DB4E67 /* CameraPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F667772BB0C18800DB4E67 /* CameraPermission.swift */; };
+		76F6677A2BB0C46600DB4E67 /* UIKitCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F667792BB0C46600DB4E67 /* UIKitCamera.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		76F667712BAF99F200DB4E67 /* PhotoEditForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditForm.swift; sourceTree = "<group>"; };
 		76F667732BB059E200DB4E67 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		76F667752BB0973F00DB4E67 /* ModelFormType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFormType.swift; sourceTree = "<group>"; };
+		76F667772BB0C18800DB4E67 /* CameraPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermission.swift; sourceTree = "<group>"; };
+		76F667792BB0C46600DB4E67 /* UIKitCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitCamera.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 				76F667712BAF99F200DB4E67 /* PhotoEditForm.swift */,
 				76F667732BB059E200DB4E67 /* ImagePicker.swift */,
 				76F667752BB0973F00DB4E67 /* ModelFormType.swift */,
+				76F667772BB0C18800DB4E67 /* CameraPermission.swift */,
+				76F667792BB0C46600DB4E67 /* UIKitCamera.swift */,
 			);
 			path = PhotoAlbum;
 			sourceTree = "<group>";
@@ -279,12 +285,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				76F6676A2BADC7DB00DB4E67 /* PhotoModel.swift in Sources */,
+				76F6677A2BB0C46600DB4E67 /* UIKitCamera.swift in Sources */,
 				76F667702BAF8FA100DB4E67 /* PhotoViewModel.swift in Sources */,
 				76F667422BADC73100DB4E67 /* PhotosListView.swift in Sources */,
 				76F667402BADC73100DB4E67 /* PhotoAlbumApp.swift in Sources */,
 				76F667762BB0973F00DB4E67 /* ModelFormType.swift in Sources */,
 				76F667722BAF99F200DB4E67 /* PhotoEditForm.swift in Sources */,
 				76F667742BB059E200DB4E67 /* ImagePicker.swift in Sources */,
+				76F667782BB0C18800DB4E67 /* CameraPermission.swift in Sources */,
 				76F6676E2BAF865B00DB4E67 /* PhotoView.swift in Sources */,
 				76F6676C2BAEDE4E00DB4E67 /* Constants.swift in Sources */,
 			);
