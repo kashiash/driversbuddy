@@ -12,6 +12,8 @@ struct PhotoView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
 
+    @State private var formType: ModelFormType?
+
     let photo: PhotoModel
     var body: some View {
         VStack {
@@ -24,8 +26,9 @@ struct PhotoView: View {
                 .padding()
             HStack{
                 Button("Edit") {
-
+                    formType = .update(photo)
                 }
+                .sheet(item: $formType) {$0}
                 Button("Delete",role: .destructive) {
                     modelContext.delete(photo)
                     try? modelContext.save()

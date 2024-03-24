@@ -12,6 +12,9 @@ struct PhotosListView: View {
 
     @Query(sort: \PhotoModel.name) var samples : [PhotoModel]
     @Environment(\.modelContext) private var modelContext
+
+    @State private var formType: ModelFormType?
+
     var body: some View {
         NavigationStack{
             Group{
@@ -25,7 +28,6 @@ struct PhotosListView: View {
                                    .resizable()
                                    .scaledToFill()
                                    .frame(width: 50, height: 50)
-                                 //  .cornerRadius(12)
                                    .clipShape(RoundedRectangle(cornerRadius: 12))
                                    .clipped()
                                    .padding(.trailing)
@@ -51,10 +53,11 @@ struct PhotosListView: View {
             .navigationTitle("Picker or camera")
             .toolbar {
                 Button {
-
+                    formType = .new
                 } label: {
-Image(systemName: "plus.circle.fill")
+                    Image(systemName: "plus.circle.fill")
                 }
+                .sheet(item: $formType) { $0 }
             }
         }
     }

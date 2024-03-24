@@ -49,6 +49,11 @@ struct PhotoEditForm: View {
             }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
+                    Button("Cancel"){
+                        dismiss()
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
                     Button{
                         if vm.isUpdating {
                             if let photo = vm.photo {
@@ -58,6 +63,7 @@ struct PhotoEditForm: View {
                                     photo.data = nil
                                 }
                                 photo.name = vm.name
+                                dismiss()
                             }
                         } else {
                             let newPhoto = PhotoModel(name: vm.name)
