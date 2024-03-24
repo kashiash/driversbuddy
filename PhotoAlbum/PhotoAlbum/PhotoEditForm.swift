@@ -14,6 +14,8 @@ struct PhotoEditForm: View {
     @Environment(\.modelContext) private var modelContext
 
     @State var vm: PhotoViewModel
+    @State private var imagePicker = ImagePicker()
+
     var body: some View {
         NavigationStack{
             Form{
@@ -30,13 +32,46 @@ struct PhotoEditForm: View {
 
                         }
                         Spacer()
-                        Button("Album", systemImage: "photo") {
-
-                        }
+                        PhotosPicker(selection: $imagePicker.imageSelection , label: {
+                            Label("Photos",systemImage: "photo")
+                        })
                     }
                     .foregroundStyle(.white)
                     .buttonStyle(.borderedProminent)
+                    Image(uiImage: vm.image)
+                        .resizable()
+                        .scaledToFill()
 
+                }
+            }
+            .onAppear {
+                imagePicker.setup(vm)
+            }
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button{
+                        if vm.isUpdating {
+                            if let photo = vm.photo {
+                                if vm.image != Constants.placeholder {
+                                    photo.data = vm.image.jpegData(compressionQuality: 0.8)
+                                } else  {
+                                    photo.data = nil
+                                }
+                                photo.name = vm.name
+                            }
+                        } else {
+                            let newPhoto = PhotoModel(name: vm.name)
+                            if vm.image != Constants.placeholder {
+                                newPhoto.data = vm.image.jpegData(compressionQuality: 0.8)
+                            } else {
+                                newPhoto.data = nil
+                            }
+                            modelContext.insert(newPhoto)
+                            dismiss()
+                        }
+                    } label: {
+                        Text(vm.isUpdating ? "Update" : "Add")
+                    }
                 }
             }
         }
