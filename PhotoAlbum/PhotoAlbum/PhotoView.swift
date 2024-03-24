@@ -19,11 +19,13 @@ struct PhotoView: View {
         VStack {
             Text(photo.name)
                 .font(.largeTitle)
-            Image(uiImage: photo.image == nil ? Constants.placeholder : photo.image!)
-                .resizable()
-                .scaledToFit()
-                .clipShape(RoundedRectangle(cornerRadius: 12))
-                .padding()
+            ZoomableScrollView{
+                Image(uiImage: photo.image == nil ? Constants.placeholder : photo.image!)
+                    .resizable()
+                    .scaledToFit()
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+ 
+            }
             HStack{
                 Button("Edit") {
                     formType = .update(photo)

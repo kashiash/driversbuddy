@@ -15,6 +15,8 @@ struct PhotoEditForm: View {
 
     @State var vm: PhotoViewModel
     @State private var imagePicker = ImagePicker()
+    @State private var showCamera = false
+    @State private var cameraError: CameraPermission.CameraError?
 
     var body: some View {
         NavigationStack{
@@ -29,8 +31,25 @@ struct PhotoEditForm: View {
                     }
                     HStack{
                         Button("Camera", systemImage: "camera") {
+                            if let error = CameraPermission.checkPermissions() {
+                                cameraError = error
+                            } else {
+                                showCamera.toggle()
+                            }
 
                         }
+                        .alert(isPresented: .constant(cameraError != nil), error: cameraError) {_ in
+                            Button("OK") {
+                                cameraError = nil
+                            }
+                        } message: { error in
+                            Text(error.recoverySuggestion ?? "try again later")
+                        }
+                        .sheet(isPresented: $showCamera) {
+                            UIKitCamera(selectedImage: $vm.cameraImage)
+                                .ignoresSafeArea()
+                        }
+
                         Spacer()
                         PhotosPicker(selection: $imagePicker.imageSelection , label: {
                             Label("Photos",systemImage: "photo")
@@ -46,6 +65,11 @@ struct PhotoEditForm: View {
             }
             .onAppear {
                 imagePicker.setup(vm)
+            }
+            .onChange(of: vm.cameraImage) {
+                if let image = vm.cameraImage {
+                    vm.data = image.jpegData(compressionQuality: 0.8)
+                }
             }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {

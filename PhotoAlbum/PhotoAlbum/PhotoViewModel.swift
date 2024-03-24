@@ -13,6 +13,7 @@ class PhotoViewModel {
     var data: Data?
 
     var photo: PhotoModel?
+    var cameraImage: UIImage?
 
     var image: UIImage {
         if let data, let uiImage = UIImage(data: data) {

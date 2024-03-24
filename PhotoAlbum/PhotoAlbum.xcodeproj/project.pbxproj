@@ -23,6 +23,7 @@
 		76F667762BB0973F00DB4E67 /* ModelFormType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F667752BB0973F00DB4E67 /* ModelFormType.swift */; };
 		76F667782BB0C18800DB4E67 /* CameraPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F667772BB0C18800DB4E67 /* CameraPermission.swift */; };
 		76F6677A2BB0C46600DB4E67 /* UIKitCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F667792BB0C46600DB4E67 /* UIKitCamera.swift */; };
+		76F6677C2BB0DB3800DB4E67 /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6677B2BB0DB3800DB4E67 /* ZoomableScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		76F667752BB0973F00DB4E67 /* ModelFormType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFormType.swift; sourceTree = "<group>"; };
 		76F667772BB0C18800DB4E67 /* CameraPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermission.swift; sourceTree = "<group>"; };
 		76F667792BB0C46600DB4E67 /* UIKitCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitCamera.swift; sourceTree = "<group>"; };
+		76F6677B2BB0DB3800DB4E67 /* ZoomableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				76F667752BB0973F00DB4E67 /* ModelFormType.swift */,
 				76F667772BB0C18800DB4E67 /* CameraPermission.swift */,
 				76F667792BB0C46600DB4E67 /* UIKitCamera.swift */,
+				76F6677B2BB0DB3800DB4E67 /* ZoomableScrollView.swift */,
 			);
 			path = PhotoAlbum;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				76F667742BB059E200DB4E67 /* ImagePicker.swift in Sources */,
 				76F667782BB0C18800DB4E67 /* CameraPermission.swift in Sources */,
 				76F6676E2BAF865B00DB4E67 /* PhotoView.swift in Sources */,
+				76F6677C2BB0DB3800DB4E67 /* ZoomableScrollView.swift in Sources */,
 				76F6676C2BAEDE4E00DB4E67 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
