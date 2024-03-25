@@ -20,13 +20,33 @@ enum Mode: String, CaseIterable, Identifiable {
         self.rawValue
     }
 
-    case walk
-    case publicTransit
-    case bicycle
+    case fontPlayground
+    case simpleFont
+    case fontWeight
+    case material
     case automobile
 
     var localized: String {
         self.rawValue
+    }
+
+
+    @ViewBuilder
+    var tabContent: some View {
+        switch self {
+        case .fontPlayground:
+            FontExamplesView()
+        case .fontPlayground:
+            FontSimpleExamplesView()
+        case .fontWeight:
+            FontWeightExamples()
+        case .material:
+            SwiftMaterialExamples()
+        default:
+            VStack{
+                Text(self.localized)
+            }
+        }
     }
 }
 

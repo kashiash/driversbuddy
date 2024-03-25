@@ -22,10 +22,7 @@ struct ApplicationDetailView: View {
 
                         VehicleListView()
                     case .mode(let mode):
-                        Form{
-                            Text(mode.rawValue)
-                                .navigationTitle(mode.rawValue)
-                        }
+                        mode.tabContent
 
                     case .tab(let tab):
                         tab.tabContent

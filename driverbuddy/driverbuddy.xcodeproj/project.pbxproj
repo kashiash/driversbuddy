@@ -57,6 +57,10 @@
 		76A1356D2B9A791900E1C9AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A1356C2B9A791900E1C9AB /* Assets.xcassets */; };
 		76A135712B9A791900E1C9AB /* TaskListExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 76A1355D2B9A791700E1C9AB /* TaskListExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		76A135762B9A797200E1C9AB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E3E2B94B7D000FF101C /* Task.swift */; };
+		76F6677E2BB1B7EA00DB4E67 /* FontExamplesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6677D2BB1B7EA00DB4E67 /* FontExamplesView.swift */; };
+		76F667802BB1BC4B00DB4E67 /* FontWeightExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6677F2BB1BC4B00DB4E67 /* FontWeightExamples.swift */; };
+		76F667822BB1BD8100DB4E67 /* SwiftMaterialExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F667812BB1BD8100DB4E67 /* SwiftMaterialExamples.swift */; };
+		76F667842BB1CF2500DB4E67 /* FontSimpleExamplesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F667832BB1CF2500DB4E67 /* FontSimpleExamplesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +155,10 @@
 		76A1356C2B9A791900E1C9AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76A1356E2B9A791900E1C9AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76A135772B9A7D6700E1C9AB /* driverbuddy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = driverbuddy.entitlements; sourceTree = "<group>"; };
+		76F6677D2BB1B7EA00DB4E67 /* FontExamplesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExamplesView.swift; sourceTree = "<group>"; };
+		76F6677F2BB1BC4B00DB4E67 /* FontWeightExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontWeightExamples.swift; sourceTree = "<group>"; };
+		76F667812BB1BD8100DB4E67 /* SwiftMaterialExamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMaterialExamples.swift; sourceTree = "<group>"; };
+		76F667832BB1CF2500DB4E67 /* FontSimpleExamplesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSimpleExamplesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +333,10 @@
 			isa = PBXGroup;
 			children = (
 				76896E722B97640300FF101C /* ShippingForm.swift */,
+				76F6677F2BB1BC4B00DB4E67 /* FontWeightExamples.swift */,
+				76F6677D2BB1B7EA00DB4E67 /* FontExamplesView.swift */,
+				76F667812BB1BD8100DB4E67 /* SwiftMaterialExamples.swift */,
+				76F667832BB1CF2500DB4E67 /* FontSimpleExamplesView.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -523,6 +535,7 @@
 				76896E452B94DB9F00FF101C /* Odometer.swift in Sources */,
 				76896E5D2B952B6900FF101C /* CarMakeListView.swift in Sources */,
 				76896E5F2B952C1600FF101C /* CarModelListView.swift in Sources */,
+				76F667802BB1BC4B00DB4E67 /* FontWeightExamples.swift in Sources */,
 				76896E412B94C7B700FF101C /* Vehicle.swift in Sources */,
 				76896E642B959DEF00FF101C /* HTTPClient.swift in Sources */,
 				76896E512B94F0EB00FF101C /* CarSerie.swift in Sources */,
@@ -541,11 +554,14 @@
 				76896E4B2B94DE0000FF101C /* Item.swift in Sources */,
 				76896E622B952F6A00FF101C /* WebService.swift in Sources */,
 				76294BA52B93C2B9006476EC /* BottomHelper.swift in Sources */,
+				76F667842BB1CF2500DB4E67 /* FontSimpleExamplesView.swift in Sources */,
 				76896E6D2B96065100FF101C /* EventView.swift in Sources */,
 				76896E6B2B95D4A100FF101C /* VehicleDetailView.swift in Sources */,
 				76896E552B94F10C00FF101C /* CarTrim.swift in Sources */,
+				76F667822BB1BD8100DB4E67 /* SwiftMaterialExamples.swift in Sources */,
 				76896E4D2B94F0B400FF101C /* CarMake.swift in Sources */,
 				76896E6F2B973EF000FF101C /* TextIconField.swift in Sources */,
+				76F6677E2BB1B7EA00DB4E67 /* FontExamplesView.swift in Sources */,
 				76896E492B94DD8000FF101C /* EventElement.swift in Sources */,
 				76896E662B95BF4400FF101C /* VehicleListView.swift in Sources */,
 				76896E4F2B94F0D200FF101C /* CarModel.swift in Sources */,
