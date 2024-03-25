@@ -12,11 +12,12 @@ Rejestr pojazdów
 - dane o zakupie
 - dane o rejestracji
 - rejestr zdarzen
-   zakupy
-  tankowania
-  serwis
-  wypożyczanie 
-  opony
+   -zakupy
+  -tankowania
+  -serwis
+  -wypożyczanie 
+  -oponyy
+- przebieg przy kazdym zdarzeniu
   
 
 marki modele i wersje pojazdow
