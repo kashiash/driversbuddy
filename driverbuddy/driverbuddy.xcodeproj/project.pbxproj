@@ -47,6 +47,7 @@
 		76896E6F2B973EF000FF101C /* TextIconField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E6E2B973EF000FF101C /* TextIconField.swift */; };
 		76896E712B973FC100FF101C /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E702B973FC100FF101C /* TextInputField.swift */; };
 		76896E732B97640300FF101C /* ShippingForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76896E722B97640300FF101C /* ShippingForm.swift */; };
+		769CE3F52BB36FBD00415554 /* CustomFontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769CE3F42BB36FBD00415554 /* CustomFontView.swift */; };
 		76A135582B9A65B600E1C9AB /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A135572B9A65B600E1C9AB /* TaskRowView.swift */; };
 		76A135602B9A791800E1C9AB /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A1355F2B9A791800E1C9AB /* WidgetKit.framework */; };
 		76A135622B9A791800E1C9AB /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A135612B9A791800E1C9AB /* SwiftUI.framework */; };
@@ -144,6 +145,7 @@
 		76896E6E2B973EF000FF101C /* TextIconField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextIconField.swift; sourceTree = "<group>"; };
 		76896E702B973FC100FF101C /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
 		76896E722B97640300FF101C /* ShippingForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingForm.swift; sourceTree = "<group>"; };
+		769CE3F42BB36FBD00415554 /* CustomFontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontView.swift; sourceTree = "<group>"; };
 		76A135572B9A65B600E1C9AB /* TaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
 		76A1355D2B9A791700E1C9AB /* TaskListExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TaskListExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A1355F2B9A791800E1C9AB /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -337,6 +339,7 @@
 				76F6677D2BB1B7EA00DB4E67 /* FontExamplesView.swift */,
 				76F667812BB1BD8100DB4E67 /* SwiftMaterialExamples.swift */,
 				76F667832BB1CF2500DB4E67 /* FontSimpleExamplesView.swift */,
+				769CE3F42BB36FBD00415554 /* CustomFontView.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				76294BA52B93C2B9006476EC /* BottomHelper.swift in Sources */,
 				76F667842BB1CF2500DB4E67 /* FontSimpleExamplesView.swift in Sources */,
 				76896E6D2B96065100FF101C /* EventView.swift in Sources */,
+				769CE3F52BB36FBD00415554 /* CustomFontView.swift in Sources */,
 				76896E6B2B95D4A100FF101C /* VehicleDetailView.swift in Sources */,
 				76896E552B94F10C00FF101C /* CarTrim.swift in Sources */,
 				76F667822BB1BD8100DB4E67 /* SwiftMaterialExamples.swift in Sources */,
