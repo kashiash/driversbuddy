@@ -1,8 +1,8 @@
 //
-//  FontExamplesView.swift
-//  driverbuddy
+//  SwiftUIView.swift
+//  SwiftUITestApp
 //
-//  Created by Jacek Kosinski U on 25/03/2024.
+//  Created by Jacek Kosinski U on 26/03/2024.
 //
 
 import SwiftUI
