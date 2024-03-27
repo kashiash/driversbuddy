@@ -49,5 +49,6 @@ struct SwiftMaterialExamples: View {
 }
 
 #Preview {
+
     SwiftMaterialExamples()
 }
