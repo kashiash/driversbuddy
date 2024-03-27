@@ -1,6 +1,6 @@
 # Concurrent Programming in SwiftData
 
-
+from https://fatbobman.com/en/posts/concurret-programming-in-swiftdata/
 
 Concurrent programming in Core Data may not be difficult, but it is full of traps. Even with ample experience in Core Data, a slight negligence can introduce vulnerabilities into the code, making the application unsafe. As the successor to Core Data, SwiftData provides a more elegant and secure mechanism for concurrent programming. This article will introduce how SwiftData addresses these issues and offers developers a better experience with concurrent programming.
 
