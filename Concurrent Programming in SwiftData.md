@@ -357,3 +357,637 @@ This section does not encourage bypassing ModelActor for data operations, but th
 ## Summary
 
 Perhaps some people, like me, upon learning about the new concurrency programming approach in SwiftData, would first feel delighted, followed by an indescribable sensation. After some time of reflection, I seem to have found the reason for this peculiar feeling - code style. Obviously, the data processing logic commonly used in Core Data does not fully apply to SwiftData. So, how can we write code that has a more SwiftData flavor? How can we make the data processing code better align with SwiftUI? These are the topics we will study in the future.
+
+# Practical SwiftData: Building SwiftUI Applications with Modern Approaches
+
+https://fatbobman.com/en/posts/practical-swiftdata-building-swiftui-applications-with-modern-approaches/
+
+In the previous article [Concurrent Programming in SwiftData](https://fatbobman.com/en/posts/concurret-programming-in-swiftdata/), we delved into the innovative concurrent programming model proposed by SwiftData, including its principles, core operations, and related considerations. This elegant programming solution has earned considerable praise. However, as more developers attempt to use SwiftData in actual SwiftUI applications, they have encountered some challenges, especially after enabling Swift’s strict concurrency checks. They found that SwiftData’s actor-based concurrency model is difficult to integrate with traditional application construction methods. This article will explain, in a tutorial-like manner, how to integrate SwiftData with modern programming concepts smoothly into SwiftUI applications and provide strategies to address the current challenges faced by developers.
+
+
+
+## What Are Modern Approaches?
+
+When discussing modern programming approaches, different developers might have various perspectives, but there are some core principles that are widely agreed upon. In the context of building SwiftUI applications with SwiftData, I believe modern programming approaches should at least meet the following key standards:
+
+- **Modularity**: By encapsulating data definitions and operational logic within independent modules, we can not only enhance code readability and maintainability but also promote feature reusability. Modularity is the cornerstone of ensuring a project structure is clear and flexible enough to adapt to future changes.
+- **Comprehensive Testability**: Ensuring every data operation is thoroughly unit tested is crucial. This practice guarantees the reliability and stability of the code, making the continuous integration and deployment process smoother.
+- **Thread Safety**: Maintaining the integrity and consistency of data in concurrent programming is extremely important. Effective thread safety measures not only prevent data conflicts and race conditions but also comply with Swift’s strict concurrency standards, ensuring the application’s high performance and stable operation.
+- **Architecture Agnostic**: A powerful data management module should flexibly adapt to various architectural designs, whether it’s SwiftUI’s own data injection mechanism or integration with other third-party frameworks, it should seamlessly connect, demonstrating a high degree of adaptability.
+- **Preview Support**: The preview feature in SwiftUI is a significant highlight of its development experience, allowing developers to see interface changes instantly. Therefore, ensuring the data layer supports this functionality is vital for speeding up the development process and enhancing efficiency.
+- **Separation of Data Display and Operations**: While adhering to SwiftUI’s reactive design principles, it’s effective to separate the data display and operational logic. Data is intuitively displayed and responds to changes through `@Query`, while creation, update, deletion, and other operations are handled by SwiftData’s new concurrency model, thus enhancing efficiency and fully leveraging the advantages of SwiftUI’s reactive framework.
+
+To better understand the concepts discussed in this article and to see the application of these modern programming methods in practice, I have prepared a demo project. You can obtain the complete project code by visiting the following GitHub repository:
+
+This project includes examples implemented using SwiftData in a SwiftUI application, demonstrating how to build applications according to the modern programming standards introduced in the article.
+
+## Creating a Data Management Module
+
+For a long time, the practice of extracting data management logic from the main project and encapsulating it into an independent module has been highly acclaimed. Many developers have adopted this approach in projects using Core Data. However, compared to SwiftData, Core Data presents additional challenges in terms of modularity. This is mainly because Core Data uses a graphical model editor to build data models, and the data models themselves are stored as separate files, loaded at different stages of the application’s lifecycle with various file extensions. This dependency on external model files has significantly diminished developers’ inclination to modularize their data management code.
+
+SwiftData, with its pure code declaration approach, greatly simplifies this process, leaving virtually no excuse not to isolate the data management logic. This method not only simplifies code maintenance but also enhances the portability and reusability of the code.
+
+Considering that the data management module is usually highly related to a specific project, I chose to create a new Swift Package in the current directory of the demo project, rather than setting up a separate repository for it.
+
+I started by creating a package named `DataProvider`. In its `Package.swift` file, we enabled Swift’s strict concurrency checks to ensure the safety of concurrent code:
+
+```swift
+.target(
+  name: "DataProvider",
+  swiftSettings: [
+    .enableExperimentalFeature("StrictConcurrency"),
+  ]
+),
+```
+
+In this independent module, we will complete the definition of the data model, the implementation of the data operation logic, and the related testing work. This structure not only clearly delineates the different concerns of the application but also makes maintenance and testing more efficient.
+
+## Building the Data Model
+
+In `SwiftData`, the method of building a data model is very similar to defining Swift’s basic types, requiring only pure code to complete. In our demo project, we have defined a succinct model `Item`:
+
+```swift
+@Model
+public final class Item {
+  public var timestamp: Date
+  public var createTimestamp: Date
+
+  public init(timestamp: Date) {
+    self.timestamp = timestamp
+    createTimestamp = .now
+  }
+}
+```
+
+It’s important to note that adopting SwiftData’s pure code modeling approach means that once the application is deployed, any modifications to the data model or data migrations require manual management of all versions of the data model. Therefore, even though our model currently has only one version, it’s best to plan a strategy for data migration right from the start.
+
+To this end, we first define an enumeration to represent the version of the model, and use the `CurrentScheme` type alias to mark it as the version currently in use:
+
+```swift
+public typealias CurrentScheme = SchemaV1
+
+public enum SchemaV1: VersionedSchema {
+  public static var versionIdentifier: Schema.Version {
+    .init(1, 0, 0)
+  }
+
+  public static var models: [any PersistentModel.Type] {
+    [Item.self]
+  }
+}
+```
+
+Next, we embed the declaration of the `Item` class into `SchemaV1`, and maintain consistency in the naming through a type alias:
+
+```swift
+public typealias Item = SchemaV1.Item
+
+extension SchemaV1 {
+  @Model
+  public final class Item {
+    public var timestamp: Date
+    public var createTimestamp: Date
+
+    public init(timestamp: Date) {
+      self.timestamp = timestamp
+      createTimestamp = .now
+    }
+  }
+}
+```
+
+In our demo project, to simplify the learning process, we haven’t further extended the data model. However, in real-world applications, developers can enhance the data model by adding predefined predicates, sorting rules, or FetchDescriptors through extensions, as detailed in [this example code](https://gist.github.com/fatbobman/6dc873ae18bb28cd1ccc521b3f56cefb).
+
+Now, whether inside the module or externally, we can use `Item` to reference this version of the data model. If the model changes in the future, we can easily introduce a new Schema version, such as `SchemaV2`, and adjust the type aliases accordingly to accommodate the new model structure.
+
+> To delve deeper into the principles of building SwiftData data models, refer to [Unveiling the Data Modeling Principles of SwiftData](https://fatbobman.com/en/posts/unveiling-the-data-modeling-principles-of-swiftdata/). Additionally, if you are interested in SwiftData’s data model migration methods, you can read [this article](https://fatbobman.com/en/posts/what-s-new-in-core-data-in-wwdc23/#staged-migration), which discusses migration strategies and implementation steps.
+
+## SwiftData Also Requires a Stack
+
+In Core Data projects, developers are accustomed to constructing a structure akin to a stack that centrally manages the declaration of the persistent container and data operation logic. SwiftData significantly simplifies this process, allowing developers to quickly build containers and perform data injections using straightforward calls like `.modelContainer(for: Item.self)`. So, in scenarios using SwiftData, is it still necessary to maintain a structure similar to a stack?
+
+Even though we will be using the `@ModelActor` macro to encapsulate the data operation logic, building a structure similar to a stack remains crucial. Such a structure not only uniformly provides a container and `@ModelActor` implementation for different parts of the application but is also particularly key in projects attempting to combine SwiftData with Core Data in a dual-framework mode, as it can handle the container construction for both frameworks in one place.
+
+In our demo project, we defined a `DataProvider` class. This class functions similarly to the `CoreDataStack` commonly used in Core Data projects:
+
+```swift
+public final class DataProvider: Sendable {
+  public static let shared = DataProvider()
+
+  public let sharedModelContainer: ModelContainer = {
+    let schema = Schema(CurrentScheme.models)
+    let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+
+    do {
+      return try ModelContainer(for: schema, configurations: [modelConfiguration])
+    } catch {
+      fatalError("Could not create ModelContainer: \(error)")
+    }
+  }()
+
+  public init() {}
+}
+```
+
+Here, the construction of the schema directly utilizes the type information provided by `CurrentScheme.models`. Moreover, if the data model requires migration, the corresponding migration logic will also be implemented within the initialization closure of `sharedModelContainer`.
+
+> Please read [Mastering the Core Data Stack](https://fatbobman.com/en/posts/masteringofcoredatastack/) to learn more about building techniques for the Core Data Stack.
+
+## Encapsulating Data Operation Logic with @ModelActor
+
+SwiftData offers the `@ModelActor` macro, encouraging developers to utilize this feature to create an actor type, thereby encapsulating the data operation logic within it. For our `Item` type, we have defined the logic for creating, updating, and deleting data items:
+
+```swift
+@ModelActor
+public actor DataHandler {
+  @discardableResult
+  public func newItem(date: Date) throws -> PersistentIdentifier {
+    let item = Item(timestamp: date)
+    modelContext.insert(item)
+    try modelContext.save()
+    return item.persistentModelID
+  }
+
+  public func updateItem(id: PersistentIdentifier, timestamp: Date) throws {
+    guard let item = self[id, as: Item.self] else { return }
+    item.timestamp = timestamp
+    try modelContext.save()
+  }
+
+  public func deleteItem(id: PersistentIdentifier) throws {
+    guard let item = self[id, as: Item.self] else { return }
+    modelContext.delete(item)
+    try modelContext.save()
+  }
+}
+```
+
+In implementing these functionalities, several points need special attention:
+
+- The update and delete operations only accept `PersistentIdentifier` as a parameter.
+- After creating a new Item instance, the method returns the `PersistentIdentifier` of the newly created object. Although this return value might not be commonly used in many practical application scenarios, it is extremely useful during unit testing, providing an effective way to reference and test the newly created data entities.
+
+> For a deeper understanding of the usage of `@ModelActor` and its role in SwiftData, please refer to the article [Concurrent Programming in SwiftData](https://fatbobman.com/en/posts/concurret-programming-in-swiftdata/).
+
+## Writing Tests
+
+Although the logic of Test-Driven Development (TDD) usually recommends writing tests before implementing functionalities, in our demo project, we will construct the test units after completing the data operation logic.
+
+First, we set up a helper function dedicated to testing, ensuring that each test case can use a clean database environment:
+
+```swift
+enum ContainerForTest {
+  static func temp(_ name: String, delete: Bool = true) throws -> ModelContainer {
+    let url = URL.temporaryDirectory.appending(component: name)
+    if delete, FileManager.default.fileExists(atPath: url.path) {
+      try FileManager.default.removeItem(at: url)
+    }
+    let schema = Schema(CurrentScheme.models)
+    let configuration = ModelConfiguration(url: url)
+    let container = try! ModelContainer(for: schema, configurations: configuration)
+    return container
+  }
+}
+```
+
+This helper function creates a separate database for each test case, with the database name based on the name of the test function. By default, it deletes the old data file before each test.
+
+Here is a test case designed to verify the functionality of creating a new `Item` instance:
+
+```swift
+final class DataProviderTests: XCTestCase {
+  @MainActor
+  func testNewItem() async throws {
+    // Arrange
+    let container = try ContainerForTest.temp(#function)
+    let hander = DataHandler(modelContainer: container)
+
+    // ACT
+    let date = Date(timeIntervalSince1970: 0)
+    try await hander.newItem(date: date)
+
+    // Assert
+    let fetchDescriptor = FetchDescriptor<Item>()
+    let items = try container.mainContext.fetch(fetchDescriptor)
+
+    XCTAssertNotNil(items.first, "The item should be created and fetched successfully.")
+    XCTAssertEqual(items.count, 1, "There should be exactly one item in the store.")
+
+    if let firstItem = items.first {
+      XCTAssertEqual(firstItem.timestamp, date, "The item's timestamp should match the initially provided date.")
+    } else {
+      XCTFail("Expected to find an item but none was found.")
+    }
+  }
+}
+```
+
+Test Process Overview:
+
+- Initialize a new, clean database instance.
+- Use `DataHandler` to add a new data item.
+- Retrieve `Item` data from the database through the container’s `mainContext`.
+- Assert whether the retrieved data meets the expectations.
+
+Special Considerations:
+
+- The test case is marked with `@MainActor` to allow direct use of the container’s `mainContext`.
+- Creation and retrieval of data are conducted in different contexts to ensure the accuracy of the logic and to simulate real application scenarios.
+- When testing deletion functionality, the returned `PersistentIdentifier` of the newly created data item can be used to simplify the process and avoid repeated data retrieval from the database.
+- The returned `PersistentIdentifier` should be used in the same context, especially when it is still in a temporary state. For operations across contexts, it may be necessary to retrieve the data again to obtain a persistent identifier.
+
+Concerns About Testing Efficiency: Based on practical experience, even the method of testing with new database files can complete a large number of tests in a short time, so developers should not worry about its impact on testing performance.
+
+<video src="https://cdn.fatbobman.com/unitTests-demo_2024-03-01.mp4" autoplay="" loop="" muted="true" style="box-sizing: border-box; border-width: 0px; border-style: solid; border-color: rgb(229, 231, 235); --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(63 131 248 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; display: block; vertical-align: middle; max-width: 100%; height: auto; margin-top: 2em; margin-bottom: 2em; caret-color: rgb(148, 163, 184); color: rgb(148, 163, 184); font-family: &quot;Inter Variable&quot;, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: -0.4px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none;"></video>
+
+## Preparing for Injection
+
+After completing comprehensive testing of data operations in the demo project, the next step is to consider how to make `DataHandler` easily accessible or injectable into other parts of the project in a safe manner that aligns with modern programming paradigms.
+
+To this end, we have defined the following method in the `DataProvider` class:
+
+```swift
+public func dataHandlerCreator() -> @Sendable () async -> DataHandler {
+  let container = sharedModelContainer
+  return { DataHandler(modelContainer: container) }
+}
+```
+
+This helper function provides a safe method to create `DataHandler` instances, which is particularly crucial when Swift’s strict concurrency checks are enabled.
+
+In the demo project, we demonstrated how to inject the `DataHandler` creation function into the view environment. This approach is not limited to injection through environment values but is also applicable to various architectural designs. For instance, when using The Composable Architecture (TCA), a similar strategy can be employed to define `DependencyKey` for the purpose of dependency injection. Moreover, given that `DataProvider` itself conforms to the `Sendable` protocol, it can also be used directly as a source for dependency injection in certain scenarios. This flexibility allows developers to choose the most appropriate injection and dependency management strategy based on the specific requirements of their application architecture.
+
+By extending SwiftUI’s `EnvironmentValues`, we can seamlessly integrate the `DataHandler` creation logic into the SwiftUI environment, thereby providing a robust data operation capability to the view layer:
+
+```swift
+public struct DataHandlerKey: EnvironmentKey {
+  public static let defaultValue: @Sendable () async -> DataHandler? = { nil }
+}
+
+extension EnvironmentValues {
+  public var createDataHandler: @Sendable () async -> DataHandler? {
+    get { self[DataHandlerKey.self] }
+    set { self[DataHandlerKey.self] = newValue }
+  }
+}
+```
+
+With this, we have completed all the preparatory work for the data management module, and now it can be integrated into the project and put to use.
+
+## Always Use One Instance or Create a New Instance Every Time
+
+When developing with SwiftData, I recommend avoiding the retention of a long-term shared `DataHandler` instance within `DataProvider`. Instead, it might be a better choice to create a new instance independently in each business logic scenario. This approach has several advantages:
+
+Firstly, considering the excellent performance of modern devices, the overhead of dynamically creating a new `DataHandler` instance is generally acceptable and does not negatively impact the application’s response speed or efficiency.
+
+Secondly, due to the absence of configurations such as error handling and merge strategies in SwiftData, creating a new independent instance for each data operation can simplify the complexity of exception handling. In this way, each instance is self-contained, and operations do not interfere with each other, thereby reducing the risk of errors and making the code clearer and easier to maintain.
+
+## Integrating the Data Module into the Project
+
+After introducing the package into the project, we can start utilizing it within the application, providing the `container` and methods to generate `DataHandler`.
+
+```swift
+import DataProvider
+import SwiftData
+import SwiftUI
+
+@main
+struct SwiftDataConcurrencyDemoApp: App {
+  let dataProvider = DataProvider.shared
+
+  var body: some Scene {
+    WindowGroup {
+      ContentView()
+        .environment(\.createDataHandler, dataProvider.dataHandlerCreator())
+    }
+    .modelContainer(dataProvider.sharedModelContainer)
+  }
+}
+```
+
+This code segment integrates the instance of `DataProvider` into the main entry of the SwiftUI application. We inject the `createDataHandler` method using the `.environment` modifier, making it available in `ContentView` and its subviews.
+
+In `ContentView`, we have implemented the functionality to add new data items, as shown below:
+
+```swift
+struct ContentView: View {
+  @Environment(\.modelContext) private var modelContext
+  @Environment(\.createDataHandler) private var createDataHandler
+  @Query(sort: \Item.createTimestamp, animation: .smooth) private var items: [Item]
+
+  var body: some View {
+    NavigationSplitView {
+      List {
+        ForEach(items) { item in
+          ItemView(item: item)
+        }
+      }
+      .toolbar {
+        ToolbarItem {
+          Button(action: addItem) {
+            Label("Add Item", systemImage: "plus")
+          }
+        }
+      }
+    } detail: {
+      Text("Select an item")
+    }
+  }
+
+  @MainActor
+  private func addItem() {
+    let createDataHandler = createDataHandler
+    Task.detached {
+      if let dataHandler = await createDataHandler() {
+        try await dataHandler.newItem(date: .now)
+      }
+    }
+  }
+}
+```
+
+Key Points Summary:
+
+- Use `@Environment(\.createDataHandler)` to introduce the method for creating `DataHandler` into the view.
+- To comply with Swift’s strict concurrency checks, the `addItem` function is annotated with `@MainActor`.
+- Utilize `Task.detached` to create a detached task, ensuring that the `DataHandler` instance is created on a non-main thread, and perform data operations, thereby avoiding blocking the UI.
+
+In this way, the data management logic is separated from the view logic, maintaining the clarity and maintainability of the code while also facilitating asynchronous data processing and interface updates.
+
+## Building Independent View to Display Data
+
+Following the list view, we will next construct an independent view for displaying detailed `Item` data. In `ItemView`, we use the `createDataHandler` environment variable to create a `DataHandler` instance, handling the data’s deletion and update operations respectively. All operations of the `DataHandler`instances are carried out on non-main threads to ensure that the smoothness of the interface is not affected by the data processing.
+
+```swift
+struct ItemView: View {
+  @Environment(\.createDataHandler) private var createDataHandler
+  let item: Item
+  var body: some View {
+    VStack {
+      Text("\(item.timestamp.timeIntervalSince1970)")
+      HStack {
+        Button("Update Timestamp") {
+          let id = item.id
+          let date = Date.now
+          let createDataHandler = createDataHandler
+          Task.detached {
+            if let dataHandler = await createDataHandler() {
+              try? await dataHandler.updateItem(id: id, timestamp: date)
+            }
+          }
+        }
+        Button("Delete") {
+          let id = item.id
+          let createDataHandler = createDataHandler
+          Task.detached {
+            if let dataHandler = await createDataHandler() {
+              try? await dataHandler.deleteItem(id: id)
+            }
+          }
+        }
+      }
+    }
+    .buttonStyle(.bordered)
+  }
+}
+```
+
+Now, we can fully run the project in the simulator and implement the addition and deletion of data.
+
+## Is a Data Transformation Layer Still Needed?
+
+In traditional Core Data projects, it’s common to create a value-type data transformation layer, which mainly serves to convert managed objects (reference types) into value types that are more suitable for use in views. This helps enhance the safety of data handling and simplifies the data binding in views.
+
+In SwiftData, the model is built using pure Swift types, and SwiftData’s `PersistentModel` leverages the observation mechanism provided by the `Observation` framework. This mechanism provides observability for each property, ensuring that views can accurately respond to data changes. Transforming these data in the views would disrupt this observation mechanism, leading to unnecessary view updates. Therefore, it is recommended to use the data models defined in SwiftData directly in the views.
+
+However, this does not mean that a data transformation layer is unnecessary in all scenarios. In fact, using value-based data models for creating or updating data can be safer and more efficient, especially when it comes to data comparison and testing.
+
+Although we did not provide a data transformation layer type in the demo project, developers should consider whether to introduce this layer based on specific needs during the actual application development process. This design decision should be based on the specific requirements of the project, taking into consideration data safety, development efficiency, and whether it can enhance the overall code quality and maintainability.
+
+## Preparing for Preview
+
+In SwiftUI development, previewing is an indispensable feature that can greatly improve development efficiency. Therefore, configuring an appropriate environment for previews is crucial. We typically recommend using an in-memory database for preview scenarios, which requires us to make appropriate adjustments to `DataProvider`.
+
+Firstly, we add the following code in `DataProvider` to initialize a non-persistent `ModelContainer`specifically for preview environments:
+
+```swift
+public let previewContainer: ModelContainer = {
+  let schema = Schema(CurrentScheme.models)
+  let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
+  do {
+    return try ModelContainer(for: schema, configurations: [modelConfiguration])
+  } catch {
+    fatalError("Could not create ModelContainer: \(error)")
+  }
+}()
+```
+
+Next, we modify the `dataHandlerCreator` function so that it can choose between using a persistent or non-persistent container based on the requirements:
+
+```swift
+public func dataHandlerCreator(preview: Bool = false) -> @Sendable () async -> DataHandler {
+  let container = preview ? previewContainer : sharedModelContainer
+  return { DataHandler(modelContainer: container) }
+}
+```
+
+To effectively utilize these configurations in previews, we typically create a dedicated preview wrapper view, which not only prepares the preview environment but also constructs demo data. Below is an example demonstrating how to build a preview container for `ItemView`:
+
+```swift
+#if DEBUG
+  struct ItemViewPreviewContainer: View {
+    @Environment(\.createDataHandler) var createDataHandler
+    @Query var items: [Item]
+    var body: some View {
+      VStack {
+        if let item = items.first {
+          ItemView(item: item)
+        }
+      }
+      .task {
+        if let dataHander = await createDataHandler() {
+          let _ = try? await dataHander.newItem(date: .now)
+        }
+      }
+    }
+  }
+#endif
+
+#Preview {
+  let dataProvider = DataProvider()
+  return ItemViewPreviewContainer()
+    .environment(\.createDataHandler, dataProvider.dataHandlerCreator(preview: true))
+    .modelContainer(dataProvider.previewContainer)
+}
+```
+
+When configuring the preview environment for `ItemViewPreviewContainer`, ensure to use the `container` and `DataHandler` creation functions specifically prepared for previews. This guarantees that the preview environment is isolated, not affecting the actual application data, and provides a fast and efficient way to demonstrate and test views.
+
+## A New Issue: The View Does Not Refresh After Data Update
+
+If you follow this article to build your own code, you might encounter a problem: clicking the update data button in `ItemView` does not refresh the data on the interface as expected. Considering that our unit tests pass successfully and there is no issue with the data update logic itself, what could be causing this problem?
+
+This is actually caused by a known bug in the current version of SwiftData, which leads to the view not refreshing after a data update under the following two conditions:
+
+- The data update logic is encapsulated within a `ModelActor`.
+- An independent view is used to display and respond to data changes (for example, when we adjust the display code as follows, using `Text` directly to show the data, the difference after the update becomes noticeable):
+
+```swift
+List {
+  ForEach(items) { item in
+    VStack {
+      Text("\(item.timestamp.timeIntervalSince1970)")
+      ItemView(item: item) // don't change after update
+    }
+  }
+}
+```
+
+This issue has been raised by several developers using `ModelActor`, and the solution I provided at the time was not ideal. It mainly involved adding extra parameters to the data display view to achieve update awareness. This method has significant limitations and might result in the loss of changes during the initial update. This article will explore other possible solutions.
+
+```swift
+struct ItemView: View {
+  @Environment(\.createDataHandler) private var createDataHandler
+  let item: Item
+  let date: Date
+  var body: some View {
+     ....
+  }
+}
+
+ItemView(item: item, date: item.timestamp)
+```
+
+## Solution Approach
+
+To address the issue of the view not refreshing after a data update, we initially consider the following two methods:
+
+1. Avoid using independent views to display and respond to data.
+2. Extract the data update logic from `DataHandler` and directly modify the data in the `mainContext`.
+
+Obviously, considering the maintenance of the existing architectural pattern and testing workflow, neither of these methods is desirable. However, if performing the data update operation in the `mainContext` can avoid the issue of the view not refreshing, then could we consider creating a dedicated `DataHandler` instance for data update operations that directly uses the `mainContext`?
+
+> The `mainContext` is provided by the `ModelContainer` instance and is annotated with `@MainActor`, meaning it can only be used on the main thread. We retrieve data in the view using this context with `@Query`.
+
+Swift’s Macro functionality provides the potential for implementing this approach. By exploring the code generated by the `@ModelActor` macro, we can gain insight into its underlying implementation mechanism and make the necessary adjustments.
+
+Let’s examine the initialization method of `DataHandler` generated by the `@ModelActor` macro:
+
+```swift
+public init(modelContainer: SwiftData.ModelContainer) {
+    let modelContext = ModelContext(modelContainer)
+    self.modelExecutor = DefaultSerialModelExecutor(modelContext: modelContext)
+    self.modelContainer = modelContainer
+}
+```
+
+This initialization method creates a new `ModelContext` instance via `ModelContext(modelContainer)`and sets the actor’s execution environment to be associated with this context (using the same thread). Therefore, we can consider adding a new constructor to `DataHandler`, which allows us to provide a solution without significantly altering the current development mode.
+
+## Temporary Solution
+
+Our temporary solution involves extending the `DataHandler` class and adjusting `DataProvider` to ensure that data update operations are carried out in the `mainContext` on the main thread.
+
+First, we add a new constructor to `DataHandler`:
+
+```swift
+@MainActor
+public init(modelContainer: ModelContainer, mainActor _: Bool) {
+  let modelContext = modelContainer.mainContext
+  modelExecutor = DefaultSerialModelExecutor(modelContext: modelContext)
+  self.modelContainer = modelContainer
+}
+```
+
+This constructor is annotated with `@MainActor` to ensure that the `modelContainer.mainContext` is directly bound to the actor’s executor. We introduced an unused parameter to avoid conflicts with the existing constructor signature.
+
+Next, we add a new helper method in `DataProvider` to generate `DataHandler` instances that are bound to the `mainContext`:
+
+```swift
+public func dataHandlerWithMainContextCreator(preview: Bool = false) -> @Sendable @MainActor () async -> DataHandler {
+  let container = preview ? previewContainer : sharedModelContainer
+  return { DataHandler(modelContainer: container, mainActor: true) }
+}
+```
+
+Next, we define a new environment key and extend `EnvironmentValues` to inject the new helper method:
+
+```swift
+public struct MainActorDataHandlerKey: EnvironmentKey {
+  public static let defaultValue: @Sendable @MainActor () async -> DataHandler? = { nil }
+}
+
+extension EnvironmentValues {
+  public var createDataHandlerWithMainContext: @Sendable @MainActor () async -> DataHandler? {
+    get { self[MainActorDataHandlerKey.self] }
+    set { self[MainActorDataHandlerKey.self] = newValue }
+  }
+}
+```
+
+In the root view of the application, we inject this new environment value:
+
+```swift
+WindowGroup {
+  ContentView()
+    .environment(\.createDataHandler, dataProvider.dataHandlerCreator())
+    // new
+    .environment(\.createDataHandlerWithMainContext, dataProvider.dataHandlerWithMainContextCreator())
+}
+```
+
+In `ItemView`, we introduce and use this new environment value to perform data update operations:
+
+```swift
+struct ItemView: View {
+  @Environment(\.createDataHandler) private var createDataHandler
+  @Environment(\.createDataHandlerWithMainContext) private var createDataHandlerWithMainContext
+  let item: Item
+  var body: some View {
+    VStack {
+      Text("\(item.timestamp.timeIntervalSince1970)")
+      HStack {
+        Button("Update Timestamp") {
+          updateItemTimestamp()
+        }
+				....
+      }
+    }
+    .buttonStyle(.bordered)
+  }
+
+  @MainActor
+  private func updateItemTimestamp() {
+    let id = item.id
+    let date = Date.now
+    Task { @MainActor in
+      if let dataHandler = await createDataHandlerWithMainContext() {
+        try? await dataHandler.updateItem(id: id, timestamp: date)
+      }
+    }
+  }
+}
+```
+
+Ensure that the corresponding environment values are also injected into the preview environment:
+
+```swift
+#Preview {
+  let dataProvider = DataProvider()
+  return ItemViewPreviewContainer()
+    .environment(\.createDataHandler, dataProvider.dataHandlerCreator(preview: true))
+    .environment(\.createDataHandlerWithMainContext, dataProvider.dataHandlerWithMainContextCreator(preview: true))
+    .modelContainer(dataProvider.previewContainer)
+}
+```
+
+In this way, we can ensure that data update operations are conducted within a `DataHandler` instance that is bound to the `mainContext` on the main thread, while other operations continue to be executed on non-main threads. Although this requires special handling for update operations, it is a viable compromise solution without altering the existing architecture. I hope that this issue can be resolved by the official update soon.
+
+**Special Reminder**: Since its first version (iOS 17.0), SwiftData has been fixing some known issues in almost every version, but new problems might also be introduced. Therefore, when you run the demo project provided in the article, and the project is running on different system versions or compiled with different versions of Xcode, you might encounter results that are inconsistent with expectations (for example, not being able to see new data after clicking the add button, or the app crashes when pushed to the background, etc.). We still need to wait for Apple to further address these issues. Nevertheless, I believe the data manipulation logic introduced in the article is correct. To ensure the method introduced in this article is used in a stable and reliable manner in the current project, please create all `DataHandler`s through `createDataHandlerWithMainContext` (i.e., building `DataHandler` with the main context).
+
+## Conclusion
+
+In this article, we explored how to adopt a new mindset to build SwiftUI applications using SwiftData. When we start using a new framework, especially those developed on the foundation of older frameworks, we cannot simply transplant old experiences and habits directly. We need to think deeply about how to leverage the advantages of the new framework while integrating the latest programming concepts to create more efficient, modern applications.
+
+Each update to a framework is not only a challenge but also an opportunity. It requires developers to step out of their comfort zones, re-examine, and learn the potential and best practices of new tools. By doing so, we not only enhance our personal skills but also provide better products for our users. As a modern data management framework, SwiftData offers developers greater flexibility and powerful features, making data handling more intuitive and efficient.
+
+With the continuous evolution of Swift and SwiftUI, combined with frameworks like SwiftData, developers are empowered to create safer, more responsive, richer, and more interactive applications. Therefore, keeping up with the latest development trends and learning to utilize the powerful features of these new tools is essential for every developer committed to improving their skills and product quality.
