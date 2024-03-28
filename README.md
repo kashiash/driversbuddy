@@ -12,7 +12,7 @@ Rejestr pojazdów
 - dane o zakupie
 - dane o rejestracji
 - rejestr zdarzen
-   -zakupy
+  -zakupy
   -tankowania
   -serwis
   -wypożyczanie 
