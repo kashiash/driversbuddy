@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct FontSimpleExamplesView: View {
+    @State private var color = Color.black
     var body: some View {
         NavigationStack{
+            ColorPicker("Select color",selection: $color).padding()
             List{
 
                 CustomFontView(title: "Large Title",
@@ -59,7 +61,13 @@ struct FontSimpleExamplesView: View {
                                font: .footnote)
 
             }
-        
+            .foregroundColor(color)
+            .toolbar{
+                ToolbarItem(placement: .bottomBar) {
+                    ColorPicker("",selection: $color)
+                }
+            }
+
         }
 
     }
