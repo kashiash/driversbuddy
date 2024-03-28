@@ -1,18 +1,18 @@
-# Concurrent Programming in SwiftData
+# Programowanie współbieżne w Swift Data
 
 from https://fatbobman.com/en/posts/concurret-programming-in-swiftdata/
 
-Concurrent programming in Core Data may not be difficult, but it is full of traps. Even with ample experience in Core Data, a slight negligence can introduce vulnerabilities into the code, making the application unsafe. As the successor to Core Data, SwiftData provides a more elegant and secure mechanism for concurrent programming. This article will introduce how SwiftData addresses these issues and offers developers a better experience with concurrent programming.
+Programowanie współbieżne w Core Data może nie jest trudne, ale jest pełne pułapek. Nawet przy dużym doświadczeniu w Core Data, lekkie zaniedbanie może wprowadzić luki w kodzie, czyniąc aplikację niebezpieczną. Jako następca Core Data, SwiftData zapewnia bardziej elegancki i bezpieczny mechanizm do jednoczesnego programowania. W tym artykule przedstawimy, w jaki sposób SwiftData rozwiązuje te problemy i oferuje programistom lepsze wrażenia z równoczesnym programowaniem.
 
-> The content of this article will make use of concurrency features like async/await, Task, and Actor in Swift. Readers are expected to have some experience with Swift concurrency programming.
+> Treść tego artykułu będzie korzystać z funkcji współbieżności, takich jak async/await, Task i Actor in Swift. Oczekuje się, że czytelnicy będą mieli pewne doświadczenie z programowaniem współbieżności Swift.
 
-## Using Serial Queues to Avoid Data Race
+## Używanie kolejek szeregowych w celu uniknięcia wyścigu danych
 
-We often say that managed object instances (NSManagedObject) and managed object contexts (NSManagedObjectContext) in Core Data are not thread-safe. So why do unsafe problems occur? How does Core Data solve this problem?
+Często mówimy, że instancje obiektów zarządzanych (`NSManagedObject`) i konteksty obiektów zarządzanych (`NSManagedObjectContext`) w Core Data nie są bezpieczne dla wątków. Dlaczego więc pojawiają się niebezpieczne problemy? Jak Core Data rozwiązuje ten problem?
 
-Actually, the main point of insecurity lies in data race (simultaneous modification of the same data in a multi-threaded environment). Core Data avoids data race issues by operating on managed object instances and managed object context instances in a serial queue. This is why we need to place the operation code within the closures of `perform` or `performAndWait`.
+W rzeczywistości główny punkt niepewności leży w wyścigu danych (jednoczesna modyfikacja tych samych danych w środowisku wielowątkowym). Core Data pozwala uniknąć problemów z wyścigiem danych, działając na instancjach obiektów zarządzanych i instancjach kontekstu obiektów zarządzanych w kolejce szeregowej. Dlatego musimy umieścić kod operacji w zamknięciach perform lub performAndWait.
 
-For the view context and the managed object instances registered within it, developers should perform operations on the main thread queue. Similarly, for private contexts and the managed objects registered within them, we should perform operations on the serial queue created by the private context. The `perform` method will ensure that all operations are performed on the correct queue.
+W przypadku kontekstu widoku i zarejestrowanych w nim instancji obiektów zarządzanych programiści powinni wykonać operacje na głównej kolejce wątków. Podobnie, w przypadku kontekstów prywatnych i zarządzanych obiektów w nich zarejestrowanych, powinniśmy wykonywać operacje na kolejce szeregowej utworzonej przez kontekst prywatny. Metoda wykonania zapewni, że wszystkie operacje będą wykonywane we właściwej kolejce.
 
 > Read the article [Several Tips on Core Data Concurrency Programming](https://fatbobman.com/en/posts/concurrencyofcoredata/) to learn in detail about different types of managed object contexts, serial queues, the usage of `perform`, and other considerations for concurrency programming in Core Data.
 
